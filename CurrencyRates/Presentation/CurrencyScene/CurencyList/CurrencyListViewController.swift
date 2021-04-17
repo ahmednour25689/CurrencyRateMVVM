@@ -7,12 +7,18 @@
 
 import UIKit
 import RxSwift
+enum ApiRequestStatus {
+  case loading
+  case finished
+  case error
+}
 class CurrencyListViewController: UIViewController {
   // MARK: - Properities
   let disposeBag = DisposeBag()
   var viewModel : DefaultCurrencyListViewModel?
   var data : [String : Double] = [:]
   var keysArray : [String] = []
+  var currentApiRequestStatus : ApiRequestStatus = .finished
   // MARK: - Outlets
   @IBOutlet weak var tblCurrency : UITableView!
   // MARK: - LifeCycle
@@ -24,32 +30,42 @@ class CurrencyListViewController: UIViewController {
     registerNib()
     viewModel = DefaultCurrencyListViewModel()
     observeOnData()
-    callApi()
+    callApi(with: "eur")
   }
-  func callApi(){
-    let baseUrl = Constants.apiUrl
-    let apiPath = Constants.path
-    let parametes = ["access_key": Constants.apiKey]
-    let apiComponent = ApiUrlComponent(baseurl: baseUrl, apiPath: apiPath, params: parametes)
-    self.viewModel?.getData(with: apiComponent)
+  func callApi(with baseCurrency : String){
+    if self.currentApiRequestStatus != .loading {
+      let baseUrl = Constants.apiUrl
+      let apiPath = Constants.path
+      let parametes = ["access_key": Constants.apiKey,"base": baseCurrency]
+      let apiComponent = ApiUrlComponent(baseurl: baseUrl, apiPath: apiPath, params: parametes)
+      self.viewModel?.getData(with: apiComponent)
+    }
+
   }
   func initUI(){
     tblCurrency.tableFooterView = UIView(frame: .zero)
     tblCurrency.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
   }
   func observeOnData(){
+    viewModel?.loading.asObservable().subscribe(onNext: {
+      [weak self] loading in
+      if loading {
+        self?.currentApiRequestStatus = .loading
+      }
+    }).disposed(by: disposeBag)
     viewModel?.successData.asObservable().subscribe(onNext: {
       [weak self] response in
       print("response")
+      self?.currentApiRequestStatus = .finished
       self?.data = response.rates
       self?.keysArray = Array(response.rates.keys)
       DispatchQueue.main.async {
         self?.tblCurrency.reloadData()
       }
-
     }
     , onError:{
       error in
+      self.currentApiRequestStatus = .error
       print("error")
     }
     ).disposed(by: disposeBag)
@@ -79,5 +95,7 @@ extension CurrencyListViewController : UITableViewDataSource,UITableViewDelegate
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 100
   }
-
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.callApi(with: keysArray[indexPath.row])
+  }
 }
