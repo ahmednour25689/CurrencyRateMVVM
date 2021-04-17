@@ -21,15 +21,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCg-fe-wbm">
-                    <rect key="frame" x="0.0" y="24" width="414" height="200"/>
+                    <rect key="frame" x="0.0" y="-16" width="414" height="300"/>
                     <color key="backgroundColor" name="AccentColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="fzr-Mi-M92"/>
+                        <constraint firstAttribute="height" constant="300" id="fzr-Mi-M92"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-cU-EdY">
-                    <rect key="frame" x="0.0" y="194" width="414" height="668"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="214" width="414" height="648"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="E5l-nm-6eY"/>
                         <outlet property="delegate" destination="-1" id="uhZ-cS-dJU"/>
@@ -40,11 +40,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Dw0-cU-EdY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4tv-xP-T4y"/>
-                <constraint firstItem="Dw0-cU-EdY" firstAttribute="top" secondItem="cCg-fe-wbm" secondAttribute="bottom" constant="-30" id="6aS-5k-tL7"/>
+                <constraint firstItem="Dw0-cU-EdY" firstAttribute="top" secondItem="cCg-fe-wbm" secondAttribute="bottom" constant="-70" id="6aS-5k-tL7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Dw0-cU-EdY" secondAttribute="bottom" id="9gJ-dx-DlK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dw0-cU-EdY" secondAttribute="trailing" id="EP2-0S-HT3"/>
                 <constraint firstItem="cCg-fe-wbm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GJF-YO-i6e"/>
-                <constraint firstItem="cCg-fe-wbm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-20" id="Irt-Yb-lnb"/>
+                <constraint firstItem="cCg-fe-wbm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-60" id="Irt-Yb-lnb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cCg-fe-wbm" secondAttribute="trailing" id="MPh-hr-9pm"/>
             </constraints>
             <point key="canvasLocation" x="34.782608695652179" y="80.357142857142847"/>
