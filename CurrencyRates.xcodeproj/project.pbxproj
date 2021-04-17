@@ -99,7 +99,6 @@
 				B2989FD03D9DC3AB1DB5FD22 /* Pods-CurrencyRatesTests.debug.xcconfig */,
 				40DA03D3329AEA6581C77866 /* Pods-CurrencyRatesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				D98BCE9A2628EA6F006FAC56 /* CurrencyRates */,
-				D98BCEB12628EA73006FAC56 /* TemplateMVVMTests */,
-				D98BCEBC2628EA73006FAC56 /* TemplateMVVMUITests */,
+				D98BCEB12628EA73006FAC56 /* CurrencyRatesTests */,
+				D98BCEBC2628EA73006FAC56 /* CurrencyRatesUITests */,
 				D98BCE992628EA6F006FAC56 /* Products */,
 				56B7AE255DD30D9CDFE2231C /* Pods */,
 				E765EE38FC2F2A53C551C92B /* Frameworks */,
@@ -140,22 +139,22 @@
 			path = CurrencyRates;
 			sourceTree = "<group>";
 		};
-		D98BCEB12628EA73006FAC56 /* TemplateMVVMTests */ = {
+		D98BCEB12628EA73006FAC56 /* CurrencyRatesTests */ = {
 			isa = PBXGroup;
 			children = (
 				D98BCEB22628EA73006FAC56 /* TemplateMVVMTests.swift */,
 				D98BCEB42628EA73006FAC56 /* Info.plist */,
 			);
-			path = TemplateMVVMTests;
+			path = CurrencyRatesTests;
 			sourceTree = "<group>";
 		};
-		D98BCEBC2628EA73006FAC56 /* TemplateMVVMUITests */ = {
+		D98BCEBC2628EA73006FAC56 /* CurrencyRatesUITests */ = {
 			isa = PBXGroup;
 			children = (
 				D98BCEBD2628EA73006FAC56 /* TemplateMVVMUITests.swift */,
 				D98BCEBF2628EA73006FAC56 /* Info.plist */,
 			);
-			path = TemplateMVVMUITests;
+			path = CurrencyRatesUITests;
 			sourceTree = "<group>";
 		};
 		D98BCECE2628EC3F006FAC56 /* Presentation */ = {
