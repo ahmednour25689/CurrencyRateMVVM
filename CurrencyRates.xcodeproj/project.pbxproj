@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,8 @@
 		D98BCF5C262AF76B006FAC56 /* NetworkLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D98BCF5A262AF76B006FAC56 /* NetworkLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D98BCF62262AF845006FAC56 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF61262AF845006FAC56 /* BaseResponse.swift */; };
 		D98BCF67262AF875006FAC56 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF66262AF875006FAC56 /* Serializable.swift */; };
+		D98BCF77262B09D5006FAC56 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF75262B09D5006FAC56 /* CurrencyTableViewCell.swift */; };
+		D98BCF78262B09D5006FAC56 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98BCF76262B09D5006FAC56 /* CurrencyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		D98BCF5A262AF76B006FAC56 /* NetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BCF61262AF845006FAC56 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		D98BCF66262AF875006FAC56 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
+		D98BCF75262B09D5006FAC56 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		D98BCF76262B09D5006FAC56 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +261,7 @@
 		D98BCF50262AF6CA006FAC56 /* CurencyList */ = {
 			isa = PBXGroup;
 			children = (
+				D98BCF74262B09B5006FAC56 /* Cells */,
 				D98BCF54262AF6F2006FAC56 /* ViewModel */,
 				D98BCF43262AF670006FAC56 /* CurrencyListViewController.swift */,
 				D98BCF44262AF670006FAC56 /* CurrencyListViewController.xib */,
@@ -287,6 +292,15 @@
 				D98BCF66262AF875006FAC56 /* Serializable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D98BCF74262B09B5006FAC56 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCF75262B09D5006FAC56 /* CurrencyTableViewCell.swift */,
+				D98BCF76262B09D5006FAC56 /* CurrencyTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		E765EE38FC2F2A53C551C92B /* Frameworks */ = {
@@ -409,6 +423,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98BCF78262B09D5006FAC56 /* CurrencyTableViewCell.xib in Resources */,
 				D98BCEA82628EA72006FAC56 /* LaunchScreen.storyboard in Resources */,
 				D98BCF46262AF670006FAC56 /* CurrencyListViewController.xib in Resources */,
 				D98BCEA52628EA72006FAC56 /* Assets.xcassets in Resources */,
@@ -539,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98BCF77262B09D5006FAC56 /* CurrencyTableViewCell.swift in Sources */,
 				D98BCF67262AF875006FAC56 /* Serializable.swift in Sources */,
 				D98BCF62262AF845006FAC56 /* BaseResponse.swift in Sources */,
 				D98BCE9C2628EA6F006FAC56 /* AppDelegate.swift in Sources */,
