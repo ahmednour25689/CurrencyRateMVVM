@@ -1,0 +1,787 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E6641B746FF6C75835C0877 /* Pods_CurrencyRates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D45DB24A2238C899D73E4EE /* Pods_CurrencyRates.framework */; };
+		99E6130658163EF7251069F7 /* Pods_CurrencyRates_CurrencyRatesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384C9A738A1928D64D69E9A1 /* Pods_CurrencyRates_CurrencyRatesUITests.framework */; };
+		9F069D333B40994ED001D3A8 /* Pods_CurrencyRatesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D127D00411C9FB098F59F0F /* Pods_CurrencyRatesTests.framework */; };
+		D98BCE9C2628EA6F006FAC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCE9B2628EA6F006FAC56 /* AppDelegate.swift */; };
+		D98BCEA52628EA72006FAC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98BCEA42628EA72006FAC56 /* Assets.xcassets */; };
+		D98BCEA82628EA72006FAC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98BCEA62628EA72006FAC56 /* LaunchScreen.storyboard */; };
+		D98BCEB32628EA73006FAC56 /* TemplateMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCEB22628EA73006FAC56 /* TemplateMVVMTests.swift */; };
+		D98BCEBE2628EA73006FAC56 /* TemplateMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCEBD2628EA73006FAC56 /* TemplateMVVMUITests.swift */; };
+		D98BCEEF2628EFAD006FAC56 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCEED2628EFAC006FAC56 /* ListViewController.swift */; };
+		D98BCEF02628EFAD006FAC56 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98BCEEE2628EFAC006FAC56 /* ListViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D98BCEAF2628EA73006FAC56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98BCE902628EA6F006FAC56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D98BCE972628EA6F006FAC56;
+			remoteInfo = TemplateMVVM;
+		};
+		D98BCEBA2628EA73006FAC56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98BCE902628EA6F006FAC56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D98BCE972628EA6F006FAC56;
+			remoteInfo = TemplateMVVM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		020990BED863D02A7FEDA89B /* Pods-CurrencyRates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRates.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates.debug.xcconfig"; sourceTree = "<group>"; };
+		24C990335D45B4C1002F07C5 /* Pods-CurrencyRates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRates.release.xcconfig"; path = "Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates.release.xcconfig"; sourceTree = "<group>"; };
+		384C9A738A1928D64D69E9A1 /* Pods_CurrencyRates_CurrencyRatesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyRates_CurrencyRatesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40DA03D3329AEA6581C77866 /* Pods-CurrencyRatesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRatesTests.release.xcconfig"; path = "Target Support Files/Pods-CurrencyRatesTests/Pods-CurrencyRatesTests.release.xcconfig"; sourceTree = "<group>"; };
+		5CD2FBD7F8F1F4CA863F76DC /* Pods-CurrencyRates-CurrencyRatesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRates-CurrencyRatesUITests.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyRates-CurrencyRatesUITests/Pods-CurrencyRates-CurrencyRatesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D45DB24A2238C899D73E4EE /* Pods_CurrencyRates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyRates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D127D00411C9FB098F59F0F /* Pods_CurrencyRatesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyRatesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2989FD03D9DC3AB1DB5FD22 /* Pods-CurrencyRatesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRatesTests.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyRatesTests/Pods-CurrencyRatesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CFC8F14349F385D8311CF1F2 /* Pods-CurrencyRates-CurrencyRatesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRates-CurrencyRatesUITests.release.xcconfig"; path = "Target Support Files/Pods-CurrencyRates-CurrencyRatesUITests/Pods-CurrencyRates-CurrencyRatesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D98BCE982628EA6F006FAC56 /* CurrencyRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98BCE9B2628EA6F006FAC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D98BCEA42628EA72006FAC56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D98BCEA72628EA72006FAC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D98BCEA92628EA72006FAC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D98BCEAE2628EA73006FAC56 /* CurrencyRatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyRatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98BCEB22628EA73006FAC56 /* TemplateMVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateMVVMTests.swift; sourceTree = "<group>"; };
+		D98BCEB42628EA73006FAC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D98BCEB92628EA73006FAC56 /* CurrencyRatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyRatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98BCEBD2628EA73006FAC56 /* TemplateMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateMVVMUITests.swift; sourceTree = "<group>"; };
+		D98BCEBF2628EA73006FAC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D98BCEED2628EFAC006FAC56 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D98BCEEE2628EFAC006FAC56 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D98BCE952628EA6F006FAC56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E6641B746FF6C75835C0877 /* Pods_CurrencyRates.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D98BCEAB2628EA73006FAC56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F069D333B40994ED001D3A8 /* Pods_CurrencyRatesTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D98BCEB62628EA73006FAC56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E6130658163EF7251069F7 /* Pods_CurrencyRates_CurrencyRatesUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56B7AE255DD30D9CDFE2231C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				020990BED863D02A7FEDA89B /* Pods-CurrencyRates.debug.xcconfig */,
+				24C990335D45B4C1002F07C5 /* Pods-CurrencyRates.release.xcconfig */,
+				5CD2FBD7F8F1F4CA863F76DC /* Pods-CurrencyRates-CurrencyRatesUITests.debug.xcconfig */,
+				CFC8F14349F385D8311CF1F2 /* Pods-CurrencyRates-CurrencyRatesUITests.release.xcconfig */,
+				B2989FD03D9DC3AB1DB5FD22 /* Pods-CurrencyRatesTests.debug.xcconfig */,
+				40DA03D3329AEA6581C77866 /* Pods-CurrencyRatesTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D98BCE8F2628EA6F006FAC56 = {
+			isa = PBXGroup;
+			children = (
+				D98BCE9A2628EA6F006FAC56 /* CurrencyRates */,
+				D98BCEB12628EA73006FAC56 /* TemplateMVVMTests */,
+				D98BCEBC2628EA73006FAC56 /* TemplateMVVMUITests */,
+				D98BCE992628EA6F006FAC56 /* Products */,
+				56B7AE255DD30D9CDFE2231C /* Pods */,
+				E765EE38FC2F2A53C551C92B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D98BCE992628EA6F006FAC56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCE982628EA6F006FAC56 /* CurrencyRates.app */,
+				D98BCEAE2628EA73006FAC56 /* CurrencyRatesTests.xctest */,
+				D98BCEB92628EA73006FAC56 /* CurrencyRatesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D98BCE9A2628EA6F006FAC56 /* CurrencyRates */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCED92628EDF1006FAC56 /* Resources */,
+				D98BCED82628EDEC006FAC56 /* Common */,
+				D98BCED72628EDDD006FAC56 /* Infrastructure */,
+				D98BCED62628EDD6006FAC56 /* Data */,
+				D98BCED52628EDBE006FAC56 /* Domain */,
+				D98BCED42628EDB0006FAC56 /* Application */,
+				D98BCECE2628EC3F006FAC56 /* Presentation */,
+				D98BCE9B2628EA6F006FAC56 /* AppDelegate.swift */,
+			);
+			path = CurrencyRates;
+			sourceTree = "<group>";
+		};
+		D98BCEB12628EA73006FAC56 /* TemplateMVVMTests */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCEB22628EA73006FAC56 /* TemplateMVVMTests.swift */,
+				D98BCEB42628EA73006FAC56 /* Info.plist */,
+			);
+			path = TemplateMVVMTests;
+			sourceTree = "<group>";
+		};
+		D98BCEBC2628EA73006FAC56 /* TemplateMVVMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCEBD2628EA73006FAC56 /* TemplateMVVMUITests.swift */,
+				D98BCEBF2628EA73006FAC56 /* Info.plist */,
+			);
+			path = TemplateMVVMUITests;
+			sourceTree = "<group>";
+		};
+		D98BCECE2628EC3F006FAC56 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCED02628EC8D006FAC56 /* DetailsScene */,
+				D98BCECF2628EC74006FAC56 /* DataScene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D98BCECF2628EC74006FAC56 /* DataScene */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCEF8262A316D006FAC56 /* DataList */,
+				D98BCEF7262A3164006FAC56 /* DataDetails */,
+				D98BCEED2628EFAC006FAC56 /* ListViewController.swift */,
+				D98BCEEE2628EFAC006FAC56 /* ListViewController.xib */,
+			);
+			path = DataScene;
+			sourceTree = "<group>";
+		};
+		D98BCED02628EC8D006FAC56 /* DetailsScene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailsScene;
+			sourceTree = "<group>";
+		};
+		D98BCED42628EDB0006FAC56 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D98BCED52628EDBE006FAC56 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D98BCED62628EDD6006FAC56 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D98BCED72628EDDD006FAC56 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		D98BCED82628EDEC006FAC56 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D98BCED92628EDF1006FAC56 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCEA92628EA72006FAC56 /* Info.plist */,
+				D98BCEA62628EA72006FAC56 /* LaunchScreen.storyboard */,
+				D98BCEA42628EA72006FAC56 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D98BCEF7262A3164006FAC56 /* DataDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataDetails;
+			sourceTree = "<group>";
+		};
+		D98BCEF8262A316D006FAC56 /* DataList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataList;
+			sourceTree = "<group>";
+		};
+		E765EE38FC2F2A53C551C92B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D45DB24A2238C899D73E4EE /* Pods_CurrencyRates.framework */,
+				384C9A738A1928D64D69E9A1 /* Pods_CurrencyRates_CurrencyRatesUITests.framework */,
+				9D127D00411C9FB098F59F0F /* Pods_CurrencyRatesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D98BCE972628EA6F006FAC56 /* CurrencyRates */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D98BCEC22628EA73006FAC56 /* Build configuration list for PBXNativeTarget "CurrencyRates" */;
+			buildPhases = (
+				854E4236C66666E5F756E45F /* [CP] Check Pods Manifest.lock */,
+				D98BCE942628EA6F006FAC56 /* Sources */,
+				D98BCE952628EA6F006FAC56 /* Frameworks */,
+				D98BCE962628EA6F006FAC56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CurrencyRates;
+			productName = TemplateMVVM;
+			productReference = D98BCE982628EA6F006FAC56 /* CurrencyRates.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D98BCEAD2628EA73006FAC56 /* CurrencyRatesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D98BCEC52628EA73006FAC56 /* Build configuration list for PBXNativeTarget "CurrencyRatesTests" */;
+			buildPhases = (
+				D9057C3693E3372FCB81C5AF /* [CP] Check Pods Manifest.lock */,
+				D98BCEAA2628EA73006FAC56 /* Sources */,
+				D98BCEAB2628EA73006FAC56 /* Frameworks */,
+				D98BCEAC2628EA73006FAC56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D98BCEB02628EA73006FAC56 /* PBXTargetDependency */,
+			);
+			name = CurrencyRatesTests;
+			productName = TemplateMVVMTests;
+			productReference = D98BCEAE2628EA73006FAC56 /* CurrencyRatesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D98BCEB82628EA73006FAC56 /* CurrencyRatesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D98BCEC82628EA73006FAC56 /* Build configuration list for PBXNativeTarget "CurrencyRatesUITests" */;
+			buildPhases = (
+				44FCE2103E0C384543B3FA28 /* [CP] Check Pods Manifest.lock */,
+				D98BCEB52628EA73006FAC56 /* Sources */,
+				D98BCEB62628EA73006FAC56 /* Frameworks */,
+				D98BCEB72628EA73006FAC56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D98BCEBB2628EA73006FAC56 /* PBXTargetDependency */,
+			);
+			name = CurrencyRatesUITests;
+			productName = TemplateMVVMUITests;
+			productReference = D98BCEB92628EA73006FAC56 /* CurrencyRatesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D98BCE902628EA6F006FAC56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					D98BCE972628EA6F006FAC56 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					D98BCEAD2628EA73006FAC56 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = D98BCE972628EA6F006FAC56;
+					};
+					D98BCEB82628EA73006FAC56 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = D98BCE972628EA6F006FAC56;
+					};
+				};
+			};
+			buildConfigurationList = D98BCE932628EA6F006FAC56 /* Build configuration list for PBXProject "CurrencyRates" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D98BCE8F2628EA6F006FAC56;
+			productRefGroup = D98BCE992628EA6F006FAC56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D98BCE972628EA6F006FAC56 /* CurrencyRates */,
+				D98BCEAD2628EA73006FAC56 /* CurrencyRatesTests */,
+				D98BCEB82628EA73006FAC56 /* CurrencyRatesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D98BCE962628EA6F006FAC56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D98BCEA82628EA72006FAC56 /* LaunchScreen.storyboard in Resources */,
+				D98BCEA52628EA72006FAC56 /* Assets.xcassets in Resources */,
+				D98BCEF02628EFAD006FAC56 /* ListViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D98BCEAC2628EA73006FAC56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D98BCEB72628EA73006FAC56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		44FCE2103E0C384543B3FA28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrencyRates-CurrencyRatesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		854E4236C66666E5F756E45F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrencyRates-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9057C3693E3372FCB81C5AF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrencyRatesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D98BCE942628EA6F006FAC56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D98BCEEF2628EFAD006FAC56 /* ListViewController.swift in Sources */,
+				D98BCE9C2628EA6F006FAC56 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D98BCEAA2628EA73006FAC56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D98BCEB32628EA73006FAC56 /* TemplateMVVMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D98BCEB52628EA73006FAC56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D98BCEBE2628EA73006FAC56 /* TemplateMVVMUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D98BCEB02628EA73006FAC56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D98BCE972628EA6F006FAC56 /* CurrencyRates */;
+			targetProxy = D98BCEAF2628EA73006FAC56 /* PBXContainerItemProxy */;
+		};
+		D98BCEBB2628EA73006FAC56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D98BCE972628EA6F006FAC56 /* CurrencyRates */;
+			targetProxy = D98BCEBA2628EA73006FAC56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D98BCEA62628EA72006FAC56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D98BCEA72628EA72006FAC56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D98BCEC02628EA73006FAC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D98BCEC12628EA73006FAC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D98BCEC32628EA73006FAC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 020990BED863D02A7FEDA89B /* Pods-CurrencyRates.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CurrencyRates/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednour.CurrencyRates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D98BCEC42628EA73006FAC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24C990335D45B4C1002F07C5 /* Pods-CurrencyRates.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CurrencyRates/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednour.CurrencyRates;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D98BCEC62628EA73006FAC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2989FD03D9DC3AB1DB5FD22 /* Pods-CurrencyRatesTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TemplateMVVMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednour.TemplateMVVMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyRates.app/CurrencyRates";
+			};
+			name = Debug;
+		};
+		D98BCEC72628EA73006FAC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40DA03D3329AEA6581C77866 /* Pods-CurrencyRatesTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TemplateMVVMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednour.TemplateMVVMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CurrencyRates.app/CurrencyRates";
+			};
+			name = Release;
+		};
+		D98BCEC92628EA73006FAC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CD2FBD7F8F1F4CA863F76DC /* Pods-CurrencyRates-CurrencyRatesUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TemplateMVVMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednour.TemplateMVVMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TemplateMVVM;
+			};
+			name = Debug;
+		};
+		D98BCECA2628EA73006FAC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFC8F14349F385D8311CF1F2 /* Pods-CurrencyRates-CurrencyRatesUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TemplateMVVMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednour.TemplateMVVMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TemplateMVVM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D98BCE932628EA6F006FAC56 /* Build configuration list for PBXProject "CurrencyRates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D98BCEC02628EA73006FAC56 /* Debug */,
+				D98BCEC12628EA73006FAC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D98BCEC22628EA73006FAC56 /* Build configuration list for PBXNativeTarget "CurrencyRates" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D98BCEC32628EA73006FAC56 /* Debug */,
+				D98BCEC42628EA73006FAC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D98BCEC52628EA73006FAC56 /* Build configuration list for PBXNativeTarget "CurrencyRatesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D98BCEC62628EA73006FAC56 /* Debug */,
+				D98BCEC72628EA73006FAC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D98BCEC82628EA73006FAC56 /* Build configuration list for PBXNativeTarget "CurrencyRatesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D98BCEC92628EA73006FAC56 /* Debug */,
+				D98BCECA2628EA73006FAC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D98BCE902628EA6F006FAC56 /* Project object */;
+}
