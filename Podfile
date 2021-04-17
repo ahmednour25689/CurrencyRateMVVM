@@ -8,6 +8,7 @@ target 'CurrencyRates' do
   pod 'RxCocoa'
   pod 'SkeletonView'
   pod 'SwiftLint'
+  pod 'IQKeyboardManagerSwift'
   # Pods for CurrencyRates
 
   target 'CurrencyRatesTests' do

@@ -25,6 +25,7 @@
 		D98BCF67262AF875006FAC56 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF66262AF875006FAC56 /* Serializable.swift */; };
 		D98BCF77262B09D5006FAC56 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF75262B09D5006FAC56 /* CurrencyTableViewCell.swift */; };
 		D98BCF78262B09D5006FAC56 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98BCF76262B09D5006FAC56 /* CurrencyTableViewCell.xib */; };
+		D98BCF8C262B6750006FAC56 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF8B262B6750006FAC56 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		D98BCF66262AF875006FAC56 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		D98BCF75262B09D5006FAC56 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		D98BCF76262B09D5006FAC56 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
+		D98BCF8B262B6750006FAC56 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 		D98BCED82628EDEC006FAC56 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D98BCF8A262B673F006FAC56 /* CustomControls */,
 				D98BCF3A262AF574006FAC56 /* Constants */,
 			);
 			path = Common;
@@ -301,6 +304,14 @@
 				D98BCF76262B09D5006FAC56 /* CurrencyTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D98BCF8A262B673F006FAC56 /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCF8B262B6750006FAC56 /* CardView.swift */,
+			);
+			path = CustomControls;
 			sourceTree = "<group>";
 		};
 		E765EE38FC2F2A53C551C92B /* Frameworks */ = {
@@ -560,6 +571,7 @@
 				D98BCE9C2628EA6F006FAC56 /* AppDelegate.swift in Sources */,
 				D98BCF56262AF706006FAC56 /* CurrencyListViewModel.swift in Sources */,
 				D98BCF45262AF670006FAC56 /* CurrencyListViewController.swift in Sources */,
+				D98BCF8C262B6750006FAC56 /* CardView.swift in Sources */,
 				D98BCF3C262AF58C006FAC56 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
