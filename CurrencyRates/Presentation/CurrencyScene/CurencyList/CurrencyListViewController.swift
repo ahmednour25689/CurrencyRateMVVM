@@ -1,14 +1,13 @@
 //
-//  ListViewController.swift
-//  TemplateMVVM
+//  CurrencyListViewController.swift
+//  CurrencyRates
 //
-//  Created by Ahmed Nour on 4/16/21.
+//  Created by Ahmed Nour on 4/17/21.
 //
 
 import UIKit
 
-class ListViewController: UIViewController {
-
+class CurrencyListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "list view"
@@ -16,10 +15,12 @@ class ListViewController: UIViewController {
   }
 
   init() {
-    super.init(nibName: "ListViewController", bundle: nil)
+    super.init(nibName: "CurrencyListViewController", bundle: nil)
   }
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+
+
 
 }

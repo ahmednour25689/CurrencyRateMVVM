@@ -15,8 +15,10 @@
 		D98BCEA82628EA72006FAC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98BCEA62628EA72006FAC56 /* LaunchScreen.storyboard */; };
 		D98BCEB32628EA73006FAC56 /* TemplateMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCEB22628EA73006FAC56 /* TemplateMVVMTests.swift */; };
 		D98BCEBE2628EA73006FAC56 /* TemplateMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCEBD2628EA73006FAC56 /* TemplateMVVMUITests.swift */; };
-		D98BCEEF2628EFAD006FAC56 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCEED2628EFAC006FAC56 /* ListViewController.swift */; };
-		D98BCEF02628EFAD006FAC56 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98BCEEE2628EFAC006FAC56 /* ListViewController.xib */; };
+		D98BCF3C262AF58C006FAC56 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF3B262AF58C006FAC56 /* Constants.swift */; };
+		D98BCF45262AF670006FAC56 /* CurrencyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF43262AF670006FAC56 /* CurrencyListViewController.swift */; };
+		D98BCF46262AF670006FAC56 /* CurrencyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98BCF44262AF670006FAC56 /* CurrencyListViewController.xib */; };
+		D98BCF56262AF706006FAC56 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF55262AF706006FAC56 /* CurrencyListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +59,10 @@
 		D98BCEB92628EA73006FAC56 /* CurrencyRatesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyRatesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BCEBD2628EA73006FAC56 /* TemplateMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateMVVMUITests.swift; sourceTree = "<group>"; };
 		D98BCEBF2628EA73006FAC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D98BCEED2628EFAC006FAC56 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		D98BCEEE2628EFAC006FAC56 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		D98BCF3B262AF58C006FAC56 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D98BCF43262AF670006FAC56 /* CurrencyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewController.swift; sourceTree = "<group>"; };
+		D98BCF44262AF670006FAC56 /* CurrencyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyListViewController.xib; sourceTree = "<group>"; };
+		D98BCF55262AF706006FAC56 /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,28 +164,17 @@
 		D98BCECE2628EC3F006FAC56 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D98BCED02628EC8D006FAC56 /* DetailsScene */,
-				D98BCECF2628EC74006FAC56 /* DataScene */,
+				D98BCECF2628EC74006FAC56 /* CurrencyScene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		D98BCECF2628EC74006FAC56 /* DataScene */ = {
+		D98BCECF2628EC74006FAC56 /* CurrencyScene */ = {
 			isa = PBXGroup;
 			children = (
-				D98BCEF8262A316D006FAC56 /* DataList */,
-				D98BCEF7262A3164006FAC56 /* DataDetails */,
-				D98BCEED2628EFAC006FAC56 /* ListViewController.swift */,
-				D98BCEEE2628EFAC006FAC56 /* ListViewController.xib */,
+				D98BCF50262AF6CA006FAC56 /* CurencyList */,
 			);
-			path = DataScene;
-			sourceTree = "<group>";
-		};
-		D98BCED02628EC8D006FAC56 /* DetailsScene */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DetailsScene;
+			path = CurrencyScene;
 			sourceTree = "<group>";
 		};
 		D98BCED42628EDB0006FAC56 /* Application */ = {
@@ -215,6 +208,7 @@
 		D98BCED82628EDEC006FAC56 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D98BCF3A262AF574006FAC56 /* Constants */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -229,18 +223,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		D98BCEF7262A3164006FAC56 /* DataDetails */ = {
+		D98BCF3A262AF574006FAC56 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				D98BCF3B262AF58C006FAC56 /* Constants.swift */,
 			);
-			path = DataDetails;
+			path = Constants;
 			sourceTree = "<group>";
 		};
-		D98BCEF8262A316D006FAC56 /* DataList */ = {
+		D98BCF50262AF6CA006FAC56 /* CurencyList */ = {
 			isa = PBXGroup;
 			children = (
+				D98BCF54262AF6F2006FAC56 /* ViewModel */,
+				D98BCF43262AF670006FAC56 /* CurrencyListViewController.swift */,
+				D98BCF44262AF670006FAC56 /* CurrencyListViewController.xib */,
 			);
-			path = DataList;
+			path = CurencyList;
+			sourceTree = "<group>";
+		};
+		D98BCF54262AF6F2006FAC56 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCF55262AF706006FAC56 /* CurrencyListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E765EE38FC2F2A53C551C92B /* Frameworks */ = {
@@ -360,8 +366,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98BCEA82628EA72006FAC56 /* LaunchScreen.storyboard in Resources */,
+				D98BCF46262AF670006FAC56 /* CurrencyListViewController.xib in Resources */,
 				D98BCEA52628EA72006FAC56 /* Assets.xcassets in Resources */,
-				D98BCEF02628EFAD006FAC56 /* ListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,8 +461,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98BCEEF2628EFAD006FAC56 /* ListViewController.swift in Sources */,
 				D98BCE9C2628EA6F006FAC56 /* AppDelegate.swift in Sources */,
+				D98BCF56262AF706006FAC56 /* CurrencyListViewModel.swift in Sources */,
+				D98BCF45262AF670006FAC56 /* CurrencyListViewController.swift in Sources */,
+				D98BCF3C262AF58C006FAC56 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
