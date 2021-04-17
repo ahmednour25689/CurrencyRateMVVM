@@ -7,7 +7,7 @@
 
 import UIKit
 import RxSwift
-import PickerView
+import McPicker
 enum ApiRequestStatus {
   case loading
   case finished
@@ -22,11 +22,10 @@ class CurrencyListViewController: UIViewController {
   var currentApiRequestStatus : ApiRequestStatus = .finished
   var currentCurrency = "EUR" {
     didSet {
-      currentCurrencyDescription.text = currentCurrency
+      setCurrentCurrencyText()
       callApi()
     }
   }
-  let currencyPicker = PickerView()
   // MARK: - Outlets
   @IBOutlet weak var tblCurrency : UITableView!
   @IBOutlet weak var currentCurrencyDescription : UILabel!
@@ -40,14 +39,18 @@ class CurrencyListViewController: UIViewController {
     viewModel = DefaultCurrencyListViewModel()
     observeOnData()
     callApi()
-    setUpPicker()
+    setCurrentCurrencyText()
   }
-  func setUpPicker() {
-    self.currencyPicker.delegate = self
-    self.currencyPicker.dataSource = self
+  func setCurrentCurrencyText(){
+    currentCurrencyDescription.text = currentCurrency
   }
+  // MARK: Actions
   @IBAction private func didPressChangeBaseCurrency(_ sender : UIButton){
-    
+    McPicker.show(data: [keysArray]) {  [weak self] (selections: [Int : String]) -> Void in
+        if let name = selections[0] {
+          self?.currentCurrency = name
+        }
+    }
   }
   func callApi(){
     if self.currentApiRequestStatus != .loading {
@@ -115,25 +118,6 @@ extension CurrencyListViewController : UITableViewDataSource,UITableViewDelegate
   }
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     self.currentCurrency = keysArray[indexPath.row]
- 
-  }
-}
-extension CurrencyListViewController : PickerViewDelegate,PickerViewDataSource {
-  func pickerViewHeightForRows(_ pickerView: PickerView) -> CGFloat {
-    return 30
-  }
-
-  func pickerViewNumberOfRows(_ pickerView: PickerView) -> Int {
-    return keysArray.count
-  }
-
-  func pickerView(_ pickerView: PickerView, titleForRow row: Int) -> String {
-    return keysArray[row]
-  }
-  func pickerView(_ pickerView: PickerView, didSelectRow row: Int) {
-    currentCurrency = keysArray[row]
 
   }
-
-
 }

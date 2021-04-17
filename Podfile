@@ -8,7 +8,7 @@ target 'CurrencyRates' do
   pod 'RxCocoa'
   pod 'SwiftLint'
   pod 'IQKeyboardManagerSwift'
-  pod 'PickerView'
+  pod 'McPicker', '~> 3.0.0'
   pod 'SVProgressHUD'
   # Pods for CurrencyRates
 
