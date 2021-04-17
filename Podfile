@@ -6,9 +6,10 @@ target 'CurrencyRates' do
   use_frameworks!
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'SkeletonView'
   pod 'SwiftLint'
   pod 'IQKeyboardManagerSwift'
+  pod 'PickerView'
+  pod 'SVProgressHUD'
   # Pods for CurrencyRates
 
   target 'CurrencyRatesTests' do

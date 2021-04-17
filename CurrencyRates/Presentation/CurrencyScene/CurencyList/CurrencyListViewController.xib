@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrencyListViewController" customModule="CurrencyRates" customModuleProvider="target">
             <connections>
+                <outlet property="currentCurrencyDescription" destination="38Y-Vj-yuH" id="IUV-Oo-r7y"/>
                 <outlet property="tblCurrency" destination="Dw0-cU-EdY" id="MUF-e4-e1w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,6 +41,19 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrH-ge-Kuc">
+                    <rect key="frame" x="144" y="119" width="126" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Change currency">
+                        <color key="titleColor" name="Black"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38Y-Vj-yuH">
+                    <rect key="frame" x="207" y="169" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dw0-cU-EdY">
                     <rect key="frame" x="0.0" y="214" width="414" height="648"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,15 +69,22 @@
                 <constraint firstItem="Dw0-cU-EdY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4tv-xP-T4y"/>
                 <constraint firstItem="Dw0-cU-EdY" firstAttribute="top" secondItem="cCg-fe-wbm" secondAttribute="bottom" constant="-70" id="6aS-5k-tL7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Dw0-cU-EdY" secondAttribute="bottom" id="9gJ-dx-DlK"/>
+                <constraint firstItem="hrH-ge-Kuc" firstAttribute="centerX" secondItem="cCg-fe-wbm" secondAttribute="centerX" id="DMl-eP-hKk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Dw0-cU-EdY" secondAttribute="trailing" id="EP2-0S-HT3"/>
                 <constraint firstItem="cCg-fe-wbm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GJF-YO-i6e"/>
                 <constraint firstItem="cCg-fe-wbm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-60" id="Irt-Yb-lnb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cCg-fe-wbm" secondAttribute="trailing" id="MPh-hr-9pm"/>
+                <constraint firstItem="38Y-Vj-yuH" firstAttribute="top" secondItem="hrH-ge-Kuc" secondAttribute="bottom" constant="20" id="VcQ-Ky-8pd"/>
+                <constraint firstItem="hrH-ge-Kuc" firstAttribute="centerY" secondItem="cCg-fe-wbm" secondAttribute="centerY" id="Ved-xY-ohE"/>
+                <constraint firstItem="38Y-Vj-yuH" firstAttribute="centerX" secondItem="hrH-ge-Kuc" secondAttribute="centerX" id="Xia-IO-m3W"/>
             </constraints>
             <point key="canvasLocation" x="34.782608695652179" y="80.357142857142847"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="Black">
+            <color red="0.24313725490196078" green="0.24313725490196078" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Blue">
             <color red="0.074509803921568626" green="0.38823529411764707" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

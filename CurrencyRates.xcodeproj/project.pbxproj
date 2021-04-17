@@ -28,6 +28,7 @@
 		D98BCF8C262B6750006FAC56 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF8B262B6750006FAC56 /* CardView.swift */; };
 		D98BCF92262B6F72006FAC56 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF91262B6F72006FAC56 /* GradientView.swift */; };
 		D98BCF97262B717F006FAC56 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF96262B717F006FAC56 /* Double+Extension.swift */; };
+		D98BCFAA262B873D006FAC56 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCFA9262B873D006FAC56 /* ProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		D98BCF8B262B6750006FAC56 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		D98BCF91262B6F72006FAC56 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D98BCF96262B717F006FAC56 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		D98BCFA9262B873D006FAC56 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 		D98BCED82628EDEC006FAC56 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D98BCFA8262B872B006FAC56 /* Helpers */,
 				D98BCF95262B716A006FAC56 /* Extensions */,
 				D98BCF8A262B673F006FAC56 /* CustomControls */,
 				D98BCF3A262AF574006FAC56 /* Constants */,
@@ -326,6 +329,14 @@
 				D98BCF96262B717F006FAC56 /* Double+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D98BCFA8262B872B006FAC56 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCFA9262B873D006FAC56 /* ProgressView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E765EE38FC2F2A53C551C92B /* Frameworks */ = {
@@ -589,6 +600,7 @@
 				D98BCF3C262AF58C006FAC56 /* Constants.swift in Sources */,
 				D98BCF97262B717F006FAC56 /* Double+Extension.swift in Sources */,
 				D98BCF92262B6F72006FAC56 /* GradientView.swift in Sources */,
+				D98BCFAA262B873D006FAC56 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

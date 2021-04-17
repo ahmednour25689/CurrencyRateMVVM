@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import PickerView
 enum ApiRequestStatus {
   case loading
   case finished
@@ -19,8 +20,16 @@ class CurrencyListViewController: UIViewController {
   var data : [String : Double] = [:]
   var keysArray : [String] = []
   var currentApiRequestStatus : ApiRequestStatus = .finished
+  var currentCurrency = "EUR" {
+    didSet {
+      currentCurrencyDescription.text = currentCurrency
+      callApi()
+    }
+  }
+  let currencyPicker = PickerView()
   // MARK: - Outlets
   @IBOutlet weak var tblCurrency : UITableView!
+  @IBOutlet weak var currentCurrencyDescription : UILabel!
   // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,13 +39,22 @@ class CurrencyListViewController: UIViewController {
     registerNib()
     viewModel = DefaultCurrencyListViewModel()
     observeOnData()
-    callApi(with: "eur")
+    callApi()
+    setUpPicker()
   }
-  func callApi(with baseCurrency : String){
+  func setUpPicker() {
+    self.currencyPicker.delegate = self
+    self.currencyPicker.dataSource = self
+  }
+  @IBAction private func didPressChangeBaseCurrency(_ sender : UIButton){
+    
+  }
+  func callApi(){
     if self.currentApiRequestStatus != .loading {
+
       let baseUrl = Constants.apiUrl
       let apiPath = Constants.path
-      let parametes = ["access_key": Constants.apiKey,"base": baseCurrency]
+      let parametes = ["access_key": Constants.apiKey,"base": currentCurrency]
       let apiComponent = ApiUrlComponent(baseurl: baseUrl, apiPath: apiPath, params: parametes)
       self.viewModel?.getData(with: apiComponent)
     }
@@ -96,6 +114,26 @@ extension CurrencyListViewController : UITableViewDataSource,UITableViewDelegate
     return 100
   }
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.callApi(with: keysArray[indexPath.row])
+    self.currentCurrency = keysArray[indexPath.row]
+ 
   }
+}
+extension CurrencyListViewController : PickerViewDelegate,PickerViewDataSource {
+  func pickerViewHeightForRows(_ pickerView: PickerView) -> CGFloat {
+    return 30
+  }
+
+  func pickerViewNumberOfRows(_ pickerView: PickerView) -> Int {
+    return keysArray.count
+  }
+
+  func pickerView(_ pickerView: PickerView, titleForRow row: Int) -> String {
+    return keysArray[row]
+  }
+  func pickerView(_ pickerView: PickerView, didSelectRow row: Int) {
+    currentCurrency = keysArray[row]
+
+  }
+
+
 }
