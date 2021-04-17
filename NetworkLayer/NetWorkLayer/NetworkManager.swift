@@ -104,6 +104,7 @@ public final class NetworkManager<T: Codable> {
         components.queryItems = parameters.map {
             URLQueryItem(name: $0.0, value: $0.1)
         }
-        return components.url
+
+      return components.url
     }
 }

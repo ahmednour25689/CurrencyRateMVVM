@@ -8,10 +8,20 @@
 import UIKit
 
 class CurrencyListViewController: UIViewController {
+  var viewModel : DefaultCurrencyListViewModel?
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "list view"
     // Do any additional setup after loading the view.
+    viewModel = DefaultCurrencyListViewModel()
+    callApi()
+  }
+  func callApi(){
+    let baseUrl = Constants.apiUrl
+    let apiPath = Constants.path
+    let parametes = ["access_key": Constants.apiKey]
+    let apiComponent = ApiUrlComponent(baseurl: baseUrl, apiPath: apiPath, params: parametes)
+    self.viewModel?.getData(with: apiComponent)
   }
 
   init() {

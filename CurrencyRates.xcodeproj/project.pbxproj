@@ -19,6 +19,10 @@
 		D98BCF45262AF670006FAC56 /* CurrencyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF43262AF670006FAC56 /* CurrencyListViewController.swift */; };
 		D98BCF46262AF670006FAC56 /* CurrencyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98BCF44262AF670006FAC56 /* CurrencyListViewController.xib */; };
 		D98BCF56262AF706006FAC56 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF55262AF706006FAC56 /* CurrencyListViewModel.swift */; };
+		D98BCF5B262AF76B006FAC56 /* NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BCF5A262AF76B006FAC56 /* NetworkLayer.framework */; };
+		D98BCF5C262AF76B006FAC56 /* NetworkLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D98BCF5A262AF76B006FAC56 /* NetworkLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D98BCF62262AF845006FAC56 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF61262AF845006FAC56 /* BaseResponse.swift */; };
+		D98BCF67262AF875006FAC56 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF66262AF875006FAC56 /* Serializable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,20 @@
 			remoteInfo = TemplateMVVM;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D98BCF5D262AF76C006FAC56 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D98BCF5C262AF76B006FAC56 /* NetworkLayer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		020990BED863D02A7FEDA89B /* Pods-CurrencyRates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRates.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +81,9 @@
 		D98BCF43262AF670006FAC56 /* CurrencyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewController.swift; sourceTree = "<group>"; };
 		D98BCF44262AF670006FAC56 /* CurrencyListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyListViewController.xib; sourceTree = "<group>"; };
 		D98BCF55262AF706006FAC56 /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
+		D98BCF5A262AF76B006FAC56 /* NetworkLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D98BCF61262AF845006FAC56 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		D98BCF66262AF875006FAC56 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E6641B746FF6C75835C0877 /* Pods_CurrencyRates.framework in Frameworks */,
+				D98BCF5B262AF76B006FAC56 /* NetworkLayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +216,7 @@
 		D98BCED62628EDD6006FAC56 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				D98BCF60262AF793006FAC56 /* Models */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -249,9 +272,27 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D98BCF60262AF793006FAC56 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCF65262AF864006FAC56 /* Protocols */,
+				D98BCF61262AF845006FAC56 /* BaseResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D98BCF65262AF864006FAC56 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCF66262AF875006FAC56 /* Serializable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		E765EE38FC2F2A53C551C92B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D98BCF5A262AF76B006FAC56 /* NetworkLayer.framework */,
 				6D45DB24A2238C899D73E4EE /* Pods_CurrencyRates.framework */,
 				384C9A738A1928D64D69E9A1 /* Pods_CurrencyRates_CurrencyRatesUITests.framework */,
 				9D127D00411C9FB098F59F0F /* Pods_CurrencyRatesTests.framework */,
@@ -270,6 +311,8 @@
 				D98BCE942628EA6F006FAC56 /* Sources */,
 				D98BCE952628EA6F006FAC56 /* Frameworks */,
 				D98BCE962628EA6F006FAC56 /* Resources */,
+				D98BCF5D262AF76C006FAC56 /* Embed Frameworks */,
+				EB07F9AE51F0D12DC2B31619 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +350,7 @@
 				D98BCEB52628EA73006FAC56 /* Sources */,
 				D98BCEB62628EA73006FAC56 /* Frameworks */,
 				D98BCEB72628EA73006FAC56 /* Resources */,
+				031A74A20F4D2CEFBCE677ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,6 +432,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		031A74A20F4D2CEFBCE677ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyRates-CurrencyRatesUITests/Pods-CurrencyRates-CurrencyRatesUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyRates-CurrencyRatesUITests/Pods-CurrencyRates-CurrencyRatesUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyRates-CurrencyRatesUITests/Pods-CurrencyRates-CurrencyRatesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		44FCE2103E0C384543B3FA28 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -454,6 +515,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EB07F9AE51F0D12DC2B31619 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -461,6 +539,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D98BCF67262AF875006FAC56 /* Serializable.swift in Sources */,
+				D98BCF62262AF845006FAC56 /* BaseResponse.swift in Sources */,
 				D98BCE9C2628EA6F006FAC56 /* AppDelegate.swift in Sources */,
 				D98BCF56262AF706006FAC56 /* CurrencyListViewModel.swift in Sources */,
 				D98BCF45262AF670006FAC56 /* CurrencyListViewController.swift in Sources */,
