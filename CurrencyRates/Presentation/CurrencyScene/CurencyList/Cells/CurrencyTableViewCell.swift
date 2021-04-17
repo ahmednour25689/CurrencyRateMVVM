@@ -16,6 +16,6 @@ class CurrencyTableViewCell: UITableViewCell {
     }
   func configWith(name : String, rate : Double){
     currencyName.text = name
-    currencyValue.text = "\(rate)"
+    currencyValue.text = "\(rate.rounded(toPlaces: 2))"
   }
 }
