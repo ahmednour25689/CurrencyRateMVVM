@@ -47,9 +47,9 @@ class CurrencyListViewController: UIViewController {
   // MARK: Actions
   @IBAction private func didPressChangeBaseCurrency(_ sender : UIButton){
     McPicker.show(data: [keysArray]) {  [weak self] (selections: [Int : String]) -> Void in
-        if let name = selections[0] {
-          self?.currentCurrency = name
-        }
+      if let name = selections[0] {
+        self?.currentCurrency = name
+      }
     }
   }
   func callApi(){
@@ -78,18 +78,21 @@ class CurrencyListViewController: UIViewController {
       [weak self] response in
       print("response")
       self?.currentApiRequestStatus = .finished
-      self?.data = response.rates
-      self?.keysArray = Array(response.rates.keys)
+      if let rates = response.rates {
+        self?.data = rates
+        self?.keysArray = Array(rates.keys)
+      }
       DispatchQueue.main.async {
         self?.tblCurrency.reloadData()
       }
-    }
-    , onError:{
-      error in
-      self.currentApiRequestStatus = .error
-      print("error")
-    }
-    ).disposed(by: disposeBag)
+    }).disposed(by: disposeBag)
+    viewModel?.errorData.asObservable().subscribe(onNext: {
+      [weak self] error in
+      self?.currentApiRequestStatus = .error
+      //to do show error view
+      print(error)
+      
+    }).disposed(by: disposeBag)
   }
   func registerNib(){
     tblCurrency.register(UINib(nibName: "CurrencyTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrencyTableViewCell")

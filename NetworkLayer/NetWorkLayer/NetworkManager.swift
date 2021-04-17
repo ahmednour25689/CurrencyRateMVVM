@@ -15,7 +15,7 @@ public final class NetworkManager<T: Codable> {
     // MARK: - Properties
 
     /// Indicates whether debug mode is enabled or not.
-    public var isDebug = false
+
 
     private let base: String
     private let path: String
@@ -28,12 +28,12 @@ public final class NetworkManager<T: Codable> {
     /// - Parameters:
     ///   - session: A session which is used for downloading content. The default value is `URLSession.shared`.
     ///   - debug: Indicates if debug mode is enabled or not. In debug mode there will be an additional console output about the requested urls.
-    internal init(session _: URLSession = URLSession.shared, baseUrl: String, path: String, params: [String: String], debug: Bool = false) {
+    internal init(session _: URLSession = URLSession.shared, baseUrl: String, path: String, params: [String: String]) {
         self.params = params
         base = baseUrl
         self.path = path
         session = URLSession(configuration: URLSessionConfiguration.default)
-        isDebug = debug
+
     }
 
     // MARK: - getData Function
@@ -51,9 +51,9 @@ public final class NetworkManager<T: Codable> {
         }
 
         // print request for debug purposes
-        if isDebug {
+
             print("Request url: \(url)")
-        }
+
 
         // create data task
         let task = buildTask(withURL: url, completion: completion)

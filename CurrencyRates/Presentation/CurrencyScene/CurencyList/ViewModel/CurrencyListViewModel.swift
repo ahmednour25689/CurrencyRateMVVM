@@ -18,7 +18,7 @@ struct ApiUrlComponent {
 class DefaultCurrencyListViewModel {
   
   var successData : PublishRelay<BaseResponse> = PublishRelay()
-  var errorData : PublishRelay<Error> = PublishRelay()
+  var errorData : PublishRelay<String> = PublishRelay()
   var loading : PublishRelay<Bool> = PublishRelay()
     func getData(with urlComponts: ApiUrlComponent) {
       self.loading.accept(true)
@@ -27,11 +27,14 @@ class DefaultCurrencyListViewModel {
           self?.loading.accept(false)
             switch result {
             case let .success(data):
-              print(data)
-
-              self?.successData.accept(data)
-            case let .failure(error):
-              self?.errorData.accept(error)
+              if data.error != nil {
+                self?.errorData.accept(data.error?.type ?? "")
+              }
+              else {
+                self?.successData.accept(data)
+              }
+            case .failure(_):           
+              self?.errorData.accept("Network error")
             }
         }
     }
