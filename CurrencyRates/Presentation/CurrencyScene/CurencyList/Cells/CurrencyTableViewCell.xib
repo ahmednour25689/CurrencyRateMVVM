@@ -37,6 +37,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="currencyName" destination="AvE-Es-msk" id="pBv-ED-iec"/>
+                <outlet property="currencyValue" destination="Smi-EL-DRh" id="GcP-JX-4Wl"/>
+            </connections>
             <point key="canvasLocation" x="35" y="81"/>
         </tableViewCell>
     </objects>

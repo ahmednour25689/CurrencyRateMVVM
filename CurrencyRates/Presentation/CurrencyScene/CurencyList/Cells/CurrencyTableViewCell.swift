@@ -8,16 +8,14 @@
 import UIKit
 
 class CurrencyTableViewCell: UITableViewCell {
-
+  @IBOutlet weak var currencyName : UILabel!
+  @IBOutlet weak var currencyValue : UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+  func configWith(name : String, rate : Double){
+    currencyName.text = name
+    currencyValue.text = "\(rate)"
+  }
 }

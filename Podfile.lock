@@ -1,0 +1,34 @@
+PODS:
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - SkeletonView (1.11.0)
+  - SwiftLint (0.42.0)
+
+DEPENDENCIES:
+  - RxCocoa
+  - RxSwift
+  - SkeletonView
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SkeletonView
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SkeletonView: cc84ce90a804dd0dd7198dd802833411c8a64eaf
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+
+PODFILE CHECKSUM: 041c740d7fead983f3ea5f05f95f7ff197295103
+
+COCOAPODS: 1.10.0
