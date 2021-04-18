@@ -9,13 +9,9 @@ import Foundation
 protocol CurrencyRatesUseCase {
   func excute(currencyRequestDTO: CurrencyRequestDTO,completion: @escaping ([CurrencyListItemViewModel]?,Error?) -> Void)
 }
-
 final class DefaultCurrencyRatesUseCase: CurrencyRatesUseCase {
-
   private let currencyRepository: CurrencyRepository
-
   init(currencyRepository: CurrencyRepository) {
-
     self.currencyRepository = currencyRepository
   }
 

@@ -9,31 +9,25 @@ import Foundation
 import NetworkLayer
 import RxSwift
 import RxCocoa
-enum ApiRequestStatus {
-  case loading
-  case finished
-  case error
-  case idle
-}
+
 struct CurrencyListViewModelActions {
   let showCurrencyConverterView: (CurrencyListItemViewModel,CurrencyListItemViewModel) -> Void
 }
 protocol CurrencyListViewModelInput {
-  func getData(with currencyRequestDTO: CurrencyRequestDTO)
-  var currencyUseCase : CurrencyRatesUseCase {get}
   func viewDidLoad()
+  func getData()
   func didSelectItem(at index: Int)
+  func setCurrentCurrency(currency : CurrencyListItemViewModel)
+  func item(at index : Int) -> CurrencyListItemViewModel
+  func pickerData()->[String]
+  func getItemsCount()->Int
 }
 protocol CurrencyListViewModelOutput {
-  func viewDidLoad()
-  func getData(with currencyRequestDTO: CurrencyRequestDTO)
-  func item(at index : Int) -> CurrencyListItemViewModel
-  func getItemsCount()->Int
   var items : PublishRelay<[CurrencyListItemViewModel]> {get}
   var errorData : PublishRelay<String> {get}
   var loading : PublishRelay<Bool> {get}
+  var currentCurrencyObservedObj : PublishRelay<CurrencyListItemViewModel> {get}
 }
-
 protocol CurrencyListViewModel: CurrencyListViewModelInput, CurrencyListViewModelOutput {}
 class DefaultCurrencyListViewModel : CurrencyListViewModel {
   // MARK: - Actions
@@ -42,33 +36,49 @@ class DefaultCurrencyListViewModel : CurrencyListViewModel {
   var items : PublishRelay<[CurrencyListItemViewModel]> = PublishRelay()
   var errorData : PublishRelay<String> = PublishRelay()
   var loading : PublishRelay<Bool> = PublishRelay()
+  var currentCurrencyObservedObj : PublishRelay<CurrencyListItemViewModel> = PublishRelay()
   // MARK: - private properities
   private var data: [CurrencyListItemViewModel] = []
+  private var currentApiRequestStatus : ApiRequestStatus = .idle
+  private var currentCurrency : CurrencyListItemViewModel?
+
   // MARK: - Intialize
   var currencyUseCase : CurrencyRatesUseCase
   init(currencyUseCase : CurrencyRatesUseCase,actions: CurrencyListViewModelActions) {
+
     self.currencyUseCase = currencyUseCase
     self.actions = actions
+
+  }
+  func initData(){
+    let initialCurrency = CurrencyListItemViewModel(currencyName: "EUR", currencyRate: 1)
+    self.setCurrentCurrency(currency: initialCurrency)
   }
   // MARK: - Call APi
-  func getData(with currencyRequestDTO: CurrencyRequestDTO) {
-    self.loading.accept(true)
-    currencyUseCase.excute(currencyRequestDTO: currencyRequestDTO, completion: {
-      [weak self] (response, error) in
-      self?.loading.accept(false)
-      if response != nil {
-        self?.data = response!
-        self?.items.accept(response!)
-      }
-      if error != nil {
-        self?.errorData.accept(error?.localizedDescription ?? "")
-      }
-    })
+  func getData() {
+    if self.currentApiRequestStatus != .loading {
+      self.loading.accept(true)
+      currentApiRequestStatus = .loading
+      currencyUseCase.excute(currencyRequestDTO: constructApiRequest(), completion: {
+        [weak self] (response, error) in
+        self?.loading.accept(false)
+        if response != nil {
+          self?.data = response!
+          self?.items.accept(response!)
+          self?.currentApiRequestStatus = .finished
+        }
+        if error != nil {
+          self?.currentApiRequestStatus = .error
+          self?.errorData.accept(error?.localizedDescription ?? "")
+        }
+      })
+    }
+
   }
 }
 extension DefaultCurrencyListViewModel {
   func viewDidLoad() {
-
+    initData()
   }
   func didSelectItem(at index: Int) {
     
@@ -79,4 +89,18 @@ extension DefaultCurrencyListViewModel {
   func getItemsCount()->Int {
     return data.count
   }
+  func pickerData() -> [String] {
+    return data.map({$0.currencyName})
+  }
+  func setCurrentCurrency(currency: CurrencyListItemViewModel) {
+    self.currentCurrency = currency
+    self.currentCurrencyObservedObj.accept(currency)
+    getData()
+  }
+  private func constructApiRequest() -> CurrencyRequestDTO{
+        let apiPath = Constants.latestCurrencyRatesApiPath
+        let parametes = ["base": currentCurrency?.currencyName ?? ""]
+        let request = CurrencyRequestDTO( apiPath: apiPath, params: parametes)
+        return request
+    }
 }
