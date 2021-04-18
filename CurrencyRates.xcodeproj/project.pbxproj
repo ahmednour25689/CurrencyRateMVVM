@@ -240,7 +240,7 @@
 		D98BCED62628EDD6006FAC56 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D98BCF60262AF793006FAC56 /* Models */,
+				D9AACC15262C6344001EFE06 /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -301,16 +301,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		D98BCF60262AF793006FAC56 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D98BCF65262AF864006FAC56 /* Protocols */,
-				D98BCF61262AF845006FAC56 /* CurrencyRatesDTO+Mapping.swift */,
-				D9AACBF2262C58E2001EFE06 /* ErrorDTO+Mapping.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		D98BCF65262AF864006FAC56 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +358,24 @@
 				D9AACBF6262C5928001EFE06 /* CurrencyRate.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		D9AACC15262C6344001EFE06 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D9AACC16262C634A001EFE06 /* DataMapping */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D9AACC16262C634A001EFE06 /* DataMapping */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCF65262AF864006FAC56 /* Protocols */,
+				D98BCF61262AF845006FAC56 /* CurrencyRatesDTO+Mapping.swift */,
+				D9AACBF2262C58E2001EFE06 /* ErrorDTO+Mapping.swift */,
+			);
+			path = DataMapping;
 			sourceTree = "<group>";
 		};
 		E765EE38FC2F2A53C551C92B /* Frameworks */ = {

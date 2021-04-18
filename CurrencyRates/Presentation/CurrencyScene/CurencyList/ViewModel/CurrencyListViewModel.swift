@@ -16,10 +16,11 @@ struct ApiUrlComponent {
 }
 
 class DefaultCurrencyListViewModel {
-  
-  var successData : PublishRelay<CurrencyRatesDTO> = PublishRelay()
+  // MARK: - OUTPUT
+  var items : PublishRelay<[CurrencyListItemViewModel]> = PublishRelay()
   var errorData : PublishRelay<String> = PublishRelay()
   var loading : PublishRelay<Bool> = PublishRelay()
+  // MARK: - Data From Api
     func getData(with urlComponts: ApiUrlComponent) {
       self.loading.accept(true)
         let manger = NetworkMangerInterface<CurrencyRatesDTO>.createNetworkMangerInstance(baseUrl: urlComponts.baseurl, path: urlComponts.apiPath, params: urlComponts.params)
@@ -31,7 +32,10 @@ class DefaultCurrencyListViewModel {
                 self?.errorData.accept(data.error?.type ?? "")
               }
               else {
-                self?.successData.accept(data)
+                if let domainData = data.toDomain() {
+                  self?.items.accept(domainData.map(CurrencyListItemViewModel.init))
+                }
+
               }
             case .failure(_):           
               self?.errorData.accept("Network error")

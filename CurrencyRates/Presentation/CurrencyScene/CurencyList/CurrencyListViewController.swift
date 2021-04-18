@@ -17,8 +17,8 @@ class CurrencyListViewController: UIViewController {
   // MARK: - Properities
   let disposeBag = DisposeBag()
   var viewModel : DefaultCurrencyListViewModel?
-  var data : [String : Double] = [:]
-  var keysArray : [String] = []
+  var items : [CurrencyListItemViewModel] = []
+
   var currentApiRequestStatus : ApiRequestStatus = .finished
   var currentCurrency = "EUR" {
     didSet {
@@ -29,11 +29,11 @@ class CurrencyListViewController: UIViewController {
   // MARK: - Outlets
   @IBOutlet weak var tblCurrency : UITableView!
   @IBOutlet weak var currentCurrencyDescription : UILabel!
+
   // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    navigationController?.navigationBar.isHidden = true
-    // Do any additional setup after loading the view.
+    configNavigationBar()
     initUI()
     registerNib()
     viewModel = DefaultCurrencyListViewModel()
@@ -41,12 +41,15 @@ class CurrencyListViewController: UIViewController {
     callApi()
     setCurrentCurrencyText()
   }
+  private func configNavigationBar() {
+    navigationController?.navigationBar.isHidden = true
+  }
   func setCurrentCurrencyText(){
     currentCurrencyDescription.text = currentCurrency
   }
   // MARK: Actions
   @IBAction private func didPressChangeBaseCurrency(_ sender : UIButton){
-    McPicker.show(data: [keysArray]) {  [weak self] (selections: [Int : String]) -> Void in
+    McPicker.show(data: [items.map({$0.currencyName})]) {  [weak self] (selections: [Int : String]) -> Void in
       if let name = selections[0] {
         self?.currentCurrency = name
       }
@@ -74,14 +77,10 @@ class CurrencyListViewController: UIViewController {
         self?.currentApiRequestStatus = .loading
       }
     }).disposed(by: disposeBag)
-    viewModel?.successData.asObservable().subscribe(onNext: {
+    viewModel?.items.asObservable().subscribe(onNext: {
       [weak self] response in
-      print("response")
       self?.currentApiRequestStatus = .finished
-      if let rates = response.rates {
-        self?.data = rates
-        self?.keysArray = Array(rates.keys)
-      }
+      self?.items = response
       DispatchQueue.main.async {
         self?.tblCurrency.reloadData()
       }
@@ -106,21 +105,19 @@ class CurrencyListViewController: UIViewController {
 }
 extension CurrencyListViewController : UITableViewDataSource,UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return keysArray.count
+    return items.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell : CurrencyTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CurrencyTableViewCell") as! CurrencyTableViewCell
-    let currencyName = keysArray[indexPath.row]
-    let currencyRate = data[currencyName]
-    cell.configWith(name: currencyName, rate: currencyRate ?? 0)
+    cell.configWith(currency: items[indexPath.row])
     return cell
   }
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 100
   }
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.currentCurrency = keysArray[indexPath.row]
+    self.currentCurrency = items[indexPath.row].currencyName
 
   }
 }

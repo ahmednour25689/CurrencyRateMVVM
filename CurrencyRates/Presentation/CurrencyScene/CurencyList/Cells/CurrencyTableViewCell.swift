@@ -15,8 +15,8 @@ class CurrencyTableViewCell: UITableViewCell {
     // Initialization code
     selectionStyle = .none
   }
-  func configWith(name : String, rate : Double){
-    currencyName.text = name
-    currencyValue.text = "\(rate.rounded(toPlaces: 2))"
+  func configWith(currency : CurrencyListItemViewModel){
+    currencyName.text = currency.currencyName
+    currencyValue.text = "\(currency.currencyRate)"
   }
 }

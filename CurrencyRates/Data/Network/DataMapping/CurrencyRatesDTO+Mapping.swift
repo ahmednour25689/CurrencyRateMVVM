@@ -17,7 +17,7 @@ struct CurrencyRatesDTO: Codable, Serializable {
 extension CurrencyRatesDTO {
     func toDomain() -> [CurrencyRate]? {
       if let ratesData = rates {
-        
+        return ratesData.map({CurrencyRate(currencyName:$0,currencyRate:$1)})
       }
       return nil
     }
