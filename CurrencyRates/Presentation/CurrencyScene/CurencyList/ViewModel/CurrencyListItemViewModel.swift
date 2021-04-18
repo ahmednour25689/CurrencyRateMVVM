@@ -7,11 +7,11 @@
 
 import Foundation
 struct CurrencyListItemViewModel {
-  var currencyName : String
-  var currencyRate : Double
+  var currencyName: String
+  var currencyRate: Double
 }
 extension CurrencyListItemViewModel {
-  init(currancyRate : CurrencyRate) {
+  init(currancyRate: CurrencyRate) {
     self.currencyName = currancyRate.currencyName
     self.currencyRate = currancyRate.currencyRate.rounded(toPlaces: 2)
   }

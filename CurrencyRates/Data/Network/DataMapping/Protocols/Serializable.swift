@@ -7,6 +7,6 @@
 
 import Foundation
 public protocol Serializable {
-  var success : Bool { get }
+  var success: Bool { get }
 
 }

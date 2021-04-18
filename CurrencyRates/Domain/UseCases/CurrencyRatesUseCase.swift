@@ -7,7 +7,7 @@
 
 import Foundation
 protocol CurrencyRatesUseCase {
-  func excute(currencyRequestDTO: CurrencyRequestDTO,completion: @escaping ([CurrencyListItemViewModel]?,Error?) -> Void)
+  func excute(currencyRequestDTO: CurrencyRequestDTO, completion: @escaping ([CurrencyListItemViewModel]?, Error?) -> Void)
 }
 final class DefaultCurrencyRatesUseCase: CurrencyRatesUseCase {
   private let currencyRepository: CurrencyRepository
@@ -15,13 +15,10 @@ final class DefaultCurrencyRatesUseCase: CurrencyRatesUseCase {
     self.currencyRepository = currencyRepository
   }
 
-  func excute(currencyRequestDTO: CurrencyRequestDTO,completion: @escaping ([CurrencyListItemViewModel]?,Error?) -> Void) {
-    currencyRepository.getCurrencyRates(with: currencyRequestDTO, completion: {
-      response , error in
-      completion(response,error)
+  func excute(currencyRequestDTO: CurrencyRequestDTO, completion: @escaping ([CurrencyListItemViewModel]?, Error?) -> Void) {
+    currencyRepository.getCurrencyRates(with: currencyRequestDTO, completion: { response, error in
+      completion(response, error)
     })
 
   }
 }
-
-

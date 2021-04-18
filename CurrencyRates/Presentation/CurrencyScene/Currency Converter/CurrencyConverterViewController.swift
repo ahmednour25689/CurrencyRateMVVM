@@ -9,14 +9,13 @@ import UIKit
 
 class CurrencyConverterViewController: UIViewController {
   // MARK: - Properities
-  var fromCurrency : CurrencyListItemViewModel
-  var toCurrency : CurrencyListItemViewModel
+  var fromCurrency: CurrencyListItemViewModel
+  var toCurrency: CurrencyListItemViewModel
   // MARK: - Outlets
-  @IBOutlet weak var toCurrencyText : UILabel!
-  @IBOutlet weak var fromCurrencyText : UILabel!
-  @IBOutlet weak var fromCurrencyInput : UITextField!
+  @IBOutlet weak var toCurrencyText: UILabel!
+  @IBOutlet weak var fromCurrencyText: UILabel!
+  @IBOutlet weak var fromCurrencyInput: UITextField!
   // MARK: - Life cycle
-
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,15 +36,15 @@ class CurrencyConverterViewController: UIViewController {
     fromCurrencyInput.text = "\(fromCurrency.currencyRate)"
     fromCurrencyText.text = " " + fromCurrency.currencyName
   }
-  func calculateRateForNewValue(value : Double){
+  func calculateRateForNewValue(value: Double) {
     let newRate = (value * toCurrency.currencyRate).rounded(toPlaces: 2)
     toCurrencyText.text = "\(newRate)" + " " + toCurrency.currencyName
   }
   fileprivate func congfigNavigationBar() {
     self.navigationController?.navigationBar.isHidden = false
   }
-  // MARK : - Initializer
-  init(fromCurrency : CurrencyListItemViewModel , toCurrency : CurrencyListItemViewModel) {
+  // MARK: - Initializer
+  init(fromCurrency: CurrencyListItemViewModel, toCurrency: CurrencyListItemViewModel) {
     self.fromCurrency = fromCurrency
     self.toCurrency = toCurrency
     super.init(nibName: "CurrencyConverterViewController", bundle: nil)

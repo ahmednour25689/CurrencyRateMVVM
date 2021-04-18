@@ -12,11 +12,11 @@ import McPicker
 class CurrencyListViewController: UIViewController {
   // MARK: - Properities
   let disposeBag = DisposeBag()
-  var viewModel : CurrencyListViewModel!
+  var viewModel: CurrencyListViewModel!
   // MARK: - Outlets
-  @IBOutlet weak var tblCurrency : UITableView!
-  @IBOutlet weak var currentCurrencyDescription : UILabel!
-  
+  @IBOutlet weak var tblCurrency: UITableView!
+  @IBOutlet weak var currentCurrencyDescription: UILabel!
+
   // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,39 +29,37 @@ class CurrencyListViewController: UIViewController {
     configNavigationBar()
   }
   // MARK: - config
-  func initUI(){
+  func initUI() {
     tblCurrency.tableFooterView = UIView(frame: .zero)
     tblCurrency.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
   }
   private func configNavigationBar() {
     navigationController?.navigationBar.isHidden = true
   }
-  func setCurrentCurrencyText(currencyName : String){
+  func setCurrentCurrencyText(currencyName: String) {
     currentCurrencyDescription.text = currencyName
   }
-  func registerNib(){
+  func registerNib() {
     tblCurrency.register(UINib(nibName: "CurrencyTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrencyTableViewCell")
   }
   // MARK: - Observe
-  func observeOnData(){
+  func observeOnData() {
     viewModel.loading.asObservable().subscribe(onNext: {
       loading in
       if loading {
         ProgressViewHelper.showProgressBarWithDimView()
-      }
-      else {
+      } else {
         ProgressViewHelper.dissmissProgressBar()
       }
     }).disposed(by: disposeBag)
     viewModel.items.asObservable().subscribe(onNext: {
-      [weak self] response in
+      [weak self] _ in
       DispatchQueue.main.async {
         self?.tblCurrency.reloadData()
       }
     }).disposed(by: disposeBag)
     viewModel.errorData.asObservable().subscribe(onNext: {
        [weak self ] error in
-      //to do show error view
       DispatchQueue.main.async {
         self?.showAlert(message: error)
       }
@@ -86,26 +84,26 @@ class CurrencyListViewController: UIViewController {
       return view
   }
   // MARK: Actions
-  @IBAction private func didPressChangeBaseCurrency(_ sender : UIButton){
+  @IBAction private func didPressChangeBaseCurrency(_ sender: UIButton) {
     let pickerData = [viewModel.pickerData()]
-    McPicker.show(data: pickerData ) {  [weak self] (selections: [Int : String]) -> Void in
+    McPicker.show(data: pickerData ) {  [weak self] (selections: [Int: String]) -> Void in
       print(selections)
       if  let selectedCurrrencyName = selections[0] {
         let index = pickerData[0].firstIndex(of: selectedCurrrencyName)!
-       let currency =  CurrencyListItemViewModel(currancyRate: CurrencyRate(currencyName : selectedCurrrencyName , currencyRate : self?.viewModel.item(at: index).currencyRate ?? 0))
+       let currency =  CurrencyListItemViewModel(currancyRate: CurrencyRate(currencyName: selectedCurrrencyName, currencyRate: self?.viewModel.item(at: index).currencyRate ?? 0))
         self?.viewModel.setCurrentCurrency(currency: currency)
       }
     }
   }
 }
 // MARK: - Table view data source and delegate
-extension CurrencyListViewController : UITableViewDataSource,UITableViewDelegate {
+extension CurrencyListViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return viewModel.getItemsCount()
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell : CurrencyTableViewCell = tableView.dequeueReusableCell(withIdentifier: "CurrencyTableViewCell") as! CurrencyTableViewCell
+    let cell: CurrencyTableViewCell = tableView.dequeueReusableCell(withIdentifier: viewModel.cellIdentifier) as! CurrencyTableViewCell
     cell.configWith(currency: viewModel.item(at: indexPath.row))
     return cell
   }

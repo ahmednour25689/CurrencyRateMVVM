@@ -7,5 +7,5 @@
 
 import Foundation
 protocol CurrencyRepository {
-  func getCurrencyRates(with currencyRequestDTO: CurrencyRequestDTO,completion: @escaping ([CurrencyListItemViewModel]?,Error?) -> Void)
+  func getCurrencyRates(with currencyRequestDTO: CurrencyRequestDTO, completion: @escaping ([CurrencyListItemViewModel]?, Error?) -> Void)
 }

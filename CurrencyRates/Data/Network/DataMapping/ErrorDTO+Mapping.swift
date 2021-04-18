@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct ErrorDTO : Codable {
-  var code : Int
-  var type : String
+struct ErrorDTO: Codable {
+  var code: Int
+  var type: String
 }

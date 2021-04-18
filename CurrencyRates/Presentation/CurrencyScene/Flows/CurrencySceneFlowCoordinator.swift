@@ -7,9 +7,9 @@
 
 import Foundation
 import UIKit
-protocol CurrencyRatesFlowCoordinatorDependencies  {
+protocol CurrencyRatesFlowCoordinatorDependencies {
   func makeCurrencyListViewController(actions: CurrencyListViewModelActions) -> CurrencyListViewController
-  func makeCurrencyConverterViewController(fromCurrency : CurrencyListItemViewModel ,toCurrency : CurrencyListItemViewModel) -> CurrencyConverterViewController
+  func makeCurrencyConverterViewController(fromCurrency: CurrencyListItemViewModel, toCurrency: CurrencyListItemViewModel) -> CurrencyConverterViewController
 
 }
 
@@ -17,7 +17,6 @@ final class CurrencySceneFlowCoordinator {
 
   private weak var navigationController: UINavigationController?
   private let dependencies: CurrencyRatesFlowCoordinatorDependencies
-
 
   init(navigationController: UINavigationController,
        dependencies: CurrencyRatesFlowCoordinatorDependencies) {
@@ -29,16 +28,13 @@ final class CurrencySceneFlowCoordinator {
     let vc = dependencies.makeCurrencyListViewController(actions: CurrencyListViewModelActions(showCurrencyConverterView: showCurrencyConverter))
     navigationController?.pushViewController(vc, animated: false)
   }
-  func showCurrencyConverter(fromCurrency : CurrencyListItemViewModel, toCurrency : CurrencyListItemViewModel){
+  func showCurrencyConverter(fromCurrency: CurrencyListItemViewModel, toCurrency: CurrencyListItemViewModel) {
     let vc = dependencies.makeCurrencyConverterViewController(fromCurrency: fromCurrency, toCurrency: toCurrency)
     navigationController?.pushViewController(vc, animated: true)
   }
-  private func goToConverionView(fromCurrency : CurrencyListItemViewModel ,toCurrency : CurrencyListItemViewModel) {
-    let vc = dependencies.makeCurrencyConverterViewController(fromCurrency : fromCurrency ,toCurrency : toCurrency)
+  private func goToConverionView(fromCurrency: CurrencyListItemViewModel, toCurrency: CurrencyListItemViewModel) {
+    let vc = dependencies.makeCurrencyConverterViewController(fromCurrency: fromCurrency, toCurrency: toCurrency)
     navigationController?.pushViewController(vc, animated: true)
   }
-
-
-
 
 }

@@ -10,9 +10,9 @@ import NetworkLayer
 import RxCocoa
 
 final class DefaultCurrencyRepository: CurrencyRepository {
-  private var apiUrl : String
-  private var apiKey : String
-  init(apiUrl : String , apiKey : String) {
+  private var apiUrl: String
+  private var apiKey: String
+  init(apiUrl: String, apiKey: String) {
     self.apiUrl = apiUrl
     self.apiKey = apiKey
   }
@@ -24,21 +24,17 @@ final class DefaultCurrencyRepository: CurrencyRepository {
       switch result {
       case let .success(data):
         if data.error != nil {
-          let error = NSError(domain:"", code:data.error?.code ?? 0 , userInfo:[ NSLocalizedDescriptionKey: data.error?.type ?? ""])
-          completion(nil,error as Error)
-        }
-        else {
+          let error = NSError(domain: "", code: data.error?.code ?? 0, userInfo: [ NSLocalizedDescriptionKey: data.error?.type ?? ""])
+          completion(nil, error as Error)
+        } else {
           if let domainData = data.toDomain() {
-            completion(domainData.map(CurrencyListItemViewModel.init),nil)
+            completion(domainData.map(CurrencyListItemViewModel.init), nil)
           }
         }
       case .failure(let error):
-        completion(nil , error)
+        completion(nil, error)
       }
     }
   }
-
-
-
 
 }

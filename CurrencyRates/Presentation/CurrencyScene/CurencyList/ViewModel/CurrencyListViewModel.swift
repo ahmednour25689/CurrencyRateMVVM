@@ -11,46 +11,49 @@ import RxSwift
 import RxCocoa
 
 struct CurrencyListViewModelActions {
-  let showCurrencyConverterView: (CurrencyListItemViewModel,CurrencyListItemViewModel) -> Void
+  let showCurrencyConverterView: (CurrencyListItemViewModel, CurrencyListItemViewModel) -> Void
 }
 protocol CurrencyListViewModelInput {
   func viewDidLoad()
   func getData()
   func didSelectItem(at index: Int)
-  func setCurrentCurrency(currency : CurrencyListItemViewModel)
-  func item(at index : Int) -> CurrencyListItemViewModel
-  func pickerData()->[String]
-  func getItemsCount()->Int
+  func setCurrentCurrency(currency: CurrencyListItemViewModel)
+  func item(at index: Int) -> CurrencyListItemViewModel
+  func pickerData() -> [String]
+  func getItemsCount() -> Int
 }
 protocol CurrencyListViewModelOutput {
-  var items : PublishRelay<[CurrencyListItemViewModel]> {get}
-  var errorData : PublishRelay<String> {get}
-  var loading : PublishRelay<Bool> {get}
-  var currentCurrencyObservedObj : PublishRelay<CurrencyListItemViewModel> {get}
+  var items: PublishRelay<[CurrencyListItemViewModel]> {get}
+  var errorData: PublishRelay<String> {get}
+  var loading: PublishRelay<Bool> {get}
+  var currentCurrencyObservedObj: PublishRelay<CurrencyListItemViewModel> {get}
+  var cellIdentifier: String {get}
 }
 protocol CurrencyListViewModel: CurrencyListViewModelInput, CurrencyListViewModelOutput {}
-class DefaultCurrencyListViewModel : CurrencyListViewModel {
+class DefaultCurrencyListViewModel: CurrencyListViewModel {
+  
   // MARK: - Actions
   private let actions: CurrencyListViewModelActions?
   // MARK: - OUTPUT
-  var items : PublishRelay<[CurrencyListItemViewModel]> = PublishRelay()
-  var errorData : PublishRelay<String> = PublishRelay()
-  var loading : PublishRelay<Bool> = PublishRelay()
-  var currentCurrencyObservedObj : PublishRelay<CurrencyListItemViewModel> = PublishRelay()
+  var items: PublishRelay<[CurrencyListItemViewModel]> = PublishRelay()
+  var errorData: PublishRelay<String> = PublishRelay()
+  var loading: PublishRelay<Bool> = PublishRelay()
+  var currentCurrencyObservedObj: PublishRelay<CurrencyListItemViewModel> = PublishRelay()
   // MARK: - private properities
   private var data: [CurrencyListItemViewModel] = []
-  private var currentApiRequestStatus : ApiRequestStatus = .idle
-  private var currentCurrency : CurrencyListItemViewModel?
-
+  private var currentApiRequestStatus: ApiRequestStatus = .idle
+  private var currentCurrency: CurrencyListItemViewModel?
+  // MARK: - private properities
+  internal var cellIdentifier: String = "CurrencyTableViewCell"
   // MARK: - Intialize
-  var currencyUseCase : CurrencyRatesUseCase
-  init(currencyUseCase : CurrencyRatesUseCase,actions: CurrencyListViewModelActions) {
+  var currencyUseCase: CurrencyRatesUseCase
+  init(currencyUseCase: CurrencyRatesUseCase, actions: CurrencyListViewModelActions) {
 
     self.currencyUseCase = currencyUseCase
     self.actions = actions
 
   }
-  func initData(){
+  func initData() {
     let initialCurrency = CurrencyListItemViewModel(currencyName: "EUR", currencyRate: 1)
     self.setCurrentCurrency(currency: initialCurrency)
   }
@@ -86,7 +89,7 @@ extension DefaultCurrencyListViewModel {
   func item(at index: Int) -> CurrencyListItemViewModel {
     return data[index]
   }
-  func getItemsCount()->Int {
+  func getItemsCount() -> Int {
     return data.count
   }
   func pickerData() -> [String] {
@@ -97,7 +100,7 @@ extension DefaultCurrencyListViewModel {
     self.currentCurrencyObservedObj.accept(currency)
     getData()
   }
-  private func constructApiRequest() -> CurrencyRequestDTO{
+  private func constructApiRequest() -> CurrencyRequestDTO {
         let apiPath = Constants.latestCurrencyRatesApiPath
         let parametes = ["base": currentCurrency?.currencyName ?? ""]
         let request = CurrencyRequestDTO( apiPath: apiPath, params: parametes)
