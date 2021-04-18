@@ -284,10 +284,9 @@
 		D98BCF50262AF6CA006FAC56 /* CurencyList */ = {
 			isa = PBXGroup;
 			children = (
+				D9AACC1B262C69AA001EFE06 /* View */,
 				D98BCF74262B09B5006FAC56 /* Cells */,
 				D98BCF54262AF6F2006FAC56 /* ViewModel */,
-				D98BCF43262AF670006FAC56 /* CurrencyListViewController.swift */,
-				D98BCF44262AF670006FAC56 /* CurrencyListViewController.xib */,
 			);
 			path = CurencyList;
 			sourceTree = "<group>";
@@ -376,6 +375,15 @@
 				D9AACBF2262C58E2001EFE06 /* ErrorDTO+Mapping.swift */,
 			);
 			path = DataMapping;
+			sourceTree = "<group>";
+		};
+		D9AACC1B262C69AA001EFE06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D98BCF43262AF670006FAC56 /* CurrencyListViewController.swift */,
+				D98BCF44262AF670006FAC56 /* CurrencyListViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E765EE38FC2F2A53C551C92B /* Frameworks */ = {

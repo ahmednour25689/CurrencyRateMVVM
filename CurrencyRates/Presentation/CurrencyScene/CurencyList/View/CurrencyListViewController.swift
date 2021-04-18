@@ -18,9 +18,8 @@ class CurrencyListViewController: UIViewController {
   let disposeBag = DisposeBag()
   var viewModel : DefaultCurrencyListViewModel?
   var items : [CurrencyListItemViewModel] = []
-
   var currentApiRequestStatus : ApiRequestStatus = .finished
-  var currentCurrency = "EUR" {
+  var currentCurrency : CurrencyListItemViewModel? {
     didSet {
       setCurrentCurrencyText()
       callApi()
@@ -33,25 +32,32 @@ class CurrencyListViewController: UIViewController {
   // MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    configNavigationBar()
     initUI()
+    initData()
     registerNib()
     viewModel = DefaultCurrencyListViewModel()
     observeOnData()
     callApi()
     setCurrentCurrencyText()
   }
+  override func viewWillAppear(_ animated: Bool) {
+    configNavigationBar()
+
+  }
   private func configNavigationBar() {
     navigationController?.navigationBar.isHidden = true
   }
   func setCurrentCurrencyText(){
-    currentCurrencyDescription.text = currentCurrency
+    currentCurrencyDescription.text = currentCurrency?.currencyName
   }
   // MARK: Actions
   @IBAction private func didPressChangeBaseCurrency(_ sender : UIButton){
-    McPicker.show(data: [items.map({$0.currencyName})]) {  [weak self] (selections: [Int : String]) -> Void in
-      if let name = selections[0] {
-        self?.currentCurrency = name
+    let pickerData = [items.map({$0.currencyName})]
+    McPicker.show(data: pickerData ) {  [weak self] (selections: [Int : String]) -> Void in
+      print(selections)
+      if  let selectedCurrrencyName = selections[0] {
+        let index = pickerData[0].firstIndex(of: selectedCurrrencyName)!
+        self?.currentCurrency = CurrencyListItemViewModel(currancyRate: CurrencyRate(currencyName : selectedCurrrencyName , currencyRate : self?.items[index].currencyRate ?? 0))
       }
     }
   }
@@ -60,11 +66,14 @@ class CurrencyListViewController: UIViewController {
 
       let baseUrl = Constants.apiUrl
       let apiPath = Constants.path
-      let parametes = ["access_key": Constants.apiKey,"base": currentCurrency]
+      let parametes = ["access_key": Constants.apiKey,"base": currentCurrency?.currencyName ?? ""]
       let apiComponent = ApiUrlComponent(baseurl: baseUrl, apiPath: apiPath, params: parametes)
       self.viewModel?.getData(with: apiComponent)
     }
 
+  }
+  func initData(){
+    self.currentCurrency = CurrencyListItemViewModel(currencyName: "EUR", currencyRate: 1)
   }
   func initUI(){
     tblCurrency.tableFooterView = UIView(frame: .zero)
@@ -117,7 +126,9 @@ extension CurrencyListViewController : UITableViewDataSource,UITableViewDelegate
     return 100
   }
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.currentCurrency = items[indexPath.row].currencyName
-
+    let currency = items[indexPath.row]
+    // go the next view
+    let vc = CurrencyConverterViewController(fromCurrency: currentCurrency!, toCurrency: currency)
+    self.navigationController?.pushViewController(vc, animated: true)
   }
 }
