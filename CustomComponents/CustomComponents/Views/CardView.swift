@@ -1,8 +1,8 @@
 //
 //  CardView.swift
-//  CurrencyRates
+//  CustomComponents
 //
-//  Created by Ahmed Nour on 4/17/21.
+//  Created by Ahmed Nour on 4/18/21.
 //
 
 import Foundation
@@ -28,3 +28,5 @@ class CardView: UIView {
   }
 
 }
+
+

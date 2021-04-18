@@ -29,7 +29,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCg-fe-wbm" customClass="GradientView" customModule="CurrencyRates" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCg-fe-wbm" customClass="GradientView" customModule="CustomComponents">
                     <rect key="frame" x="0.0" y="-16" width="414" height="300"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="fzr-Mi-M92"/>

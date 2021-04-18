@@ -27,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig3-k2-vHX" customClass="GradientView" customModule="CurrencyRates" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig3-k2-vHX" customClass="GradientView" customModule="CustomComponents">
                     <rect key="frame" x="0.0" y="-16" width="414" height="878"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTc-4e-ex5">
