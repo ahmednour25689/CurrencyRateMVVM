@@ -9,37 +9,74 @@ import Foundation
 import NetworkLayer
 import RxSwift
 import RxCocoa
-struct ApiUrlComponent {
-    let baseurl: String
-    let apiPath: String
-    let params: [String: String]
+enum ApiRequestStatus {
+  case loading
+  case finished
+  case error
+  case idle
+}
+struct CurrencyListViewModelActions {
+  let showCurrencyConverterView: (CurrencyListItemViewModel,CurrencyListItemViewModel) -> Void
+}
+protocol CurrencyListViewModelInput {
+  func getData(with currencyRequestDTO: CurrencyRequestDTO)
+  var currencyUseCase : CurrencyRatesUseCase {get}
+  func viewDidLoad()
+  func didSelectItem(at index: Int)
+}
+protocol CurrencyListViewModelOutput {
+  func viewDidLoad()
+  func getData(with currencyRequestDTO: CurrencyRequestDTO)
+  func item(at index : Int) -> CurrencyListItemViewModel
+  func getItemsCount()->Int
+  var items : PublishRelay<[CurrencyListItemViewModel]> {get}
+  var errorData : PublishRelay<String> {get}
+  var loading : PublishRelay<Bool> {get}
 }
 
-class DefaultCurrencyListViewModel {
+protocol CurrencyListViewModel: CurrencyListViewModelInput, CurrencyListViewModelOutput {}
+class DefaultCurrencyListViewModel : CurrencyListViewModel {
+  // MARK: - Actions
+  private let actions: CurrencyListViewModelActions?
   // MARK: - OUTPUT
   var items : PublishRelay<[CurrencyListItemViewModel]> = PublishRelay()
   var errorData : PublishRelay<String> = PublishRelay()
   var loading : PublishRelay<Bool> = PublishRelay()
-  // MARK: - Data From Api
-    func getData(with urlComponts: ApiUrlComponent) {
-      self.loading.accept(true)
-        let manger = NetworkMangerInterface<CurrencyRatesDTO>.createNetworkMangerInstance(baseUrl: urlComponts.baseurl, path: urlComponts.apiPath, params: urlComponts.params)
-        manger.getData { [weak self] result in
-          self?.loading.accept(false)
-            switch result {
-            case let .success(data):
-              if data.error != nil {
-                self?.errorData.accept(data.error?.type ?? "")
-              }
-              else {
-                if let domainData = data.toDomain() {
-                  self?.items.accept(domainData.map(CurrencyListItemViewModel.init))
-                }
+  // MARK: - private properities
+  private var data: [CurrencyListItemViewModel] = []
+  // MARK: - Intialize
+  var currencyUseCase : CurrencyRatesUseCase
+  init(currencyUseCase : CurrencyRatesUseCase,actions: CurrencyListViewModelActions) {
+    self.currencyUseCase = currencyUseCase
+    self.actions = actions
+  }
+  // MARK: - Call APi
+  func getData(with currencyRequestDTO: CurrencyRequestDTO) {
+    self.loading.accept(true)
+    currencyUseCase.excute(currencyRequestDTO: currencyRequestDTO, completion: {
+      [weak self] (response, error) in
+      self?.loading.accept(false)
+      if response != nil {
+        self?.data = response!
+        self?.items.accept(response!)
+      }
+      if error != nil {
+        self?.errorData.accept(error?.localizedDescription ?? "")
+      }
+    })
+  }
+}
+extension DefaultCurrencyListViewModel {
+  func viewDidLoad() {
 
-              }
-            case .failure(_):           
-              self?.errorData.accept("Network error")
-            }
-        }
-    }
+  }
+  func didSelectItem(at index: Int) {
+    
+  }
+  func item(at index: Int) -> CurrencyListItemViewModel {
+    return data[index]
+  }
+  func getItemsCount()->Int {
+    return data.count
+  }
 }

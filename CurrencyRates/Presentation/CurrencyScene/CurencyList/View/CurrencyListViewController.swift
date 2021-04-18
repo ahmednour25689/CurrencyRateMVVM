@@ -8,17 +8,13 @@
 import UIKit
 import RxSwift
 import McPicker
-enum ApiRequestStatus {
-  case loading
-  case finished
-  case error
-}
+
 class CurrencyListViewController: UIViewController {
   // MARK: - Properities
   let disposeBag = DisposeBag()
-  var viewModel : DefaultCurrencyListViewModel?
+  var viewModel : DefaultCurrencyListViewModel!
   var items : [CurrencyListItemViewModel] = []
-  var currentApiRequestStatus : ApiRequestStatus = .finished
+  var currentApiRequestStatus : ApiRequestStatus = .idle
   var currentCurrency : CurrencyListItemViewModel? {
     didSet {
       setCurrentCurrencyText()
@@ -35,7 +31,6 @@ class CurrencyListViewController: UIViewController {
     initUI()
     initData()
     registerNib()
-    viewModel = DefaultCurrencyListViewModel()
     observeOnData()
     callApi()
     setCurrentCurrencyText()
@@ -66,8 +61,8 @@ class CurrencyListViewController: UIViewController {
       let baseUrl = Constants.apiUrl
       let apiPath = Constants.path
       let parametes = ["access_key": Constants.apiKey,"base": currentCurrency?.currencyName ?? ""]
-      let apiComponent = ApiUrlComponent(baseurl: baseUrl, apiPath: apiPath, params: parametes)
-      self.viewModel?.getData(with: apiComponent)
+      let apiComponent = CurrencyRequestDTO(baseurl: baseUrl, apiPath: apiPath, params: parametes)
+      self.viewModel.getData(with: apiComponent)
     }
 
   }
@@ -79,7 +74,7 @@ class CurrencyListViewController: UIViewController {
     tblCurrency.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
   }
   func observeOnData(){
-    viewModel?.loading.asObservable().subscribe(onNext: {
+    viewModel.loading.asObservable().subscribe(onNext: {
       [weak self] loading in
       if loading {
         ProgressViewHelper.showProgressBarWithDimView()
@@ -89,7 +84,7 @@ class CurrencyListViewController: UIViewController {
         ProgressViewHelper.dissmissProgressBar()
       }
     }).disposed(by: disposeBag)
-    viewModel?.items.asObservable().subscribe(onNext: {
+    viewModel.items.asObservable().subscribe(onNext: {
       [weak self] response in
       self?.currentApiRequestStatus = .finished
       self?.items = response
@@ -97,7 +92,7 @@ class CurrencyListViewController: UIViewController {
         self?.tblCurrency.reloadData()
       }
     }).disposed(by: disposeBag)
-    viewModel?.errorData.asObservable().subscribe(onNext: {
+    viewModel.errorData.asObservable().subscribe(onNext: {
       [weak self] error in
       self?.currentApiRequestStatus = .error
       //to do show error view
@@ -108,11 +103,19 @@ class CurrencyListViewController: UIViewController {
   func registerNib(){
     tblCurrency.register(UINib(nibName: "CurrencyTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrencyTableViewCell")
   }
+  // MARK: - Init
+
   init() {
     super.init(nibName: "CurrencyListViewController", bundle: nil)
   }
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  static func create(with viewModel: DefaultCurrencyListViewModel
+                     ) -> CurrencyListViewController {
+      let view = CurrencyListViewController()
+      view.viewModel = viewModel
+      return view
   }
 }
 extension CurrencyListViewController : UITableViewDataSource,UITableViewDelegate {
