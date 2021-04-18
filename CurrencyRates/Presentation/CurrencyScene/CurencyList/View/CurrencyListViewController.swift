@@ -77,7 +77,7 @@ class CurrencyListViewController: UIViewController {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  static func create(with viewModel: DefaultCurrencyListViewModel
+  static func create(with viewModel: CurrencyListViewModel
                      ) -> CurrencyListViewController {
       let view = CurrencyListViewController()
       view.viewModel = viewModel
