@@ -10,6 +10,9 @@
 		8E6641B746FF6C75835C0877 /* Pods_CurrencyRates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D45DB24A2238C899D73E4EE /* Pods_CurrencyRates.framework */; };
 		99E6130658163EF7251069F7 /* Pods_CurrencyRates_CurrencyRatesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384C9A738A1928D64D69E9A1 /* Pods_CurrencyRates_CurrencyRatesUITests.framework */; };
 		9F069D333B40994ED001D3A8 /* Pods_CurrencyRatesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D127D00411C9FB098F59F0F /* Pods_CurrencyRatesTests.framework */; };
+		D982CCD3262CB2A900078B08 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D982CCD0262CB2A900078B08 /* Roboto-Bold.ttf */; };
+		D982CCD4262CB2A900078B08 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D982CCD1262CB2A900078B08 /* Roboto-Medium.ttf */; };
+		D982CCD5262CB2A900078B08 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D982CCD2262CB2A900078B08 /* Roboto-Regular.ttf */; };
 		D98BCE9C2628EA6F006FAC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCE9B2628EA6F006FAC56 /* AppDelegate.swift */; };
 		D98BCEA52628EA72006FAC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98BCEA42628EA72006FAC56 /* Assets.xcassets */; };
 		D98BCEA82628EA72006FAC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98BCEA62628EA72006FAC56 /* LaunchScreen.storyboard */; };
@@ -77,6 +80,9 @@
 		9D127D00411C9FB098F59F0F /* Pods_CurrencyRatesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CurrencyRatesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2989FD03D9DC3AB1DB5FD22 /* Pods-CurrencyRatesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRatesTests.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyRatesTests/Pods-CurrencyRatesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFC8F14349F385D8311CF1F2 /* Pods-CurrencyRates-CurrencyRatesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyRates-CurrencyRatesUITests.release.xcconfig"; path = "Target Support Files/Pods-CurrencyRates-CurrencyRatesUITests/Pods-CurrencyRates-CurrencyRatesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D982CCD0262CB2A900078B08 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		D982CCD1262CB2A900078B08 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		D982CCD2262CB2A900078B08 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		D98BCE982628EA6F006FAC56 /* CurrencyRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98BCE9B2628EA6F006FAC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D98BCEA42628EA72006FAC56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +154,16 @@
 				40DA03D3329AEA6581C77866 /* Pods-CurrencyRatesTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D982CCCF262CB27C00078B08 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D982CCD0262CB2A900078B08 /* Roboto-Bold.ttf */,
+				D982CCD1262CB2A900078B08 /* Roboto-Medium.ttf */,
+				D982CCD2262CB2A900078B08 /* Roboto-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		D98BCE8F2628EA6F006FAC56 = {
@@ -266,6 +282,7 @@
 		D98BCED92628EDF1006FAC56 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D982CCCF262CB27C00078B08 /* fonts */,
 				D98BCEA92628EA72006FAC56 /* Info.plist */,
 				D98BCEA62628EA72006FAC56 /* LaunchScreen.storyboard */,
 				D98BCEA42628EA72006FAC56 /* Assets.xcassets */,
@@ -508,6 +525,9 @@
 			files = (
 				D98BCF78262B09D5006FAC56 /* CurrencyTableViewCell.xib in Resources */,
 				D98BCEA82628EA72006FAC56 /* LaunchScreen.storyboard in Resources */,
+				D982CCD5262CB2A900078B08 /* Roboto-Regular.ttf in Resources */,
+				D982CCD3262CB2A900078B08 /* Roboto-Bold.ttf in Resources */,
+				D982CCD4262CB2A900078B08 /* Roboto-Medium.ttf in Resources */,
 				D98BCF46262AF670006FAC56 /* CurrencyListViewController.xib in Resources */,
 				D98BCEA52628EA72006FAC56 /* Assets.xcassets in Resources */,
 				D9AACBE8262B998D001EFE06 /* CurrencyConverterViewController.xib in Resources */,

@@ -42,7 +42,6 @@ class CurrencyListViewController: UIViewController {
   }
   override func viewWillAppear(_ animated: Bool) {
     configNavigationBar()
-
   }
   private func configNavigationBar() {
     navigationController?.navigationBar.isHidden = true
@@ -83,7 +82,11 @@ class CurrencyListViewController: UIViewController {
     viewModel?.loading.asObservable().subscribe(onNext: {
       [weak self] loading in
       if loading {
+        ProgressViewHelper.showProgressBarWithDimView()
         self?.currentApiRequestStatus = .loading
+      }
+      else {
+        ProgressViewHelper.dissmissProgressBar()
       }
     }).disposed(by: disposeBag)
     viewModel?.items.asObservable().subscribe(onNext: {
