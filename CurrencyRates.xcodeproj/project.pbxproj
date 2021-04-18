@@ -22,6 +22,7 @@
 		D9745FEE262CE0AA0007E0CF /* AppDiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FED262CE0AA0007E0CF /* AppDiContainer.swift */; };
 		D9745FF2262CE1270007E0CF /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FF1262CE1270007E0CF /* AppConfigurations.swift */; };
 		D9745FF6262CE5420007E0CF /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FF5262CE5420007E0CF /* AppFlowCoordinator.swift */; };
+		D9745FFB262CE8990007E0CF /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FFA262CE8990007E0CF /* UIViewController + Extension.swift */; };
 		D982CCD3262CB2A900078B08 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D982CCD0262CB2A900078B08 /* Roboto-Bold.ttf */; };
 		D982CCD4262CB2A900078B08 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D982CCD1262CB2A900078B08 /* Roboto-Medium.ttf */; };
 		D982CCD5262CB2A900078B08 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D982CCD2262CB2A900078B08 /* Roboto-Regular.ttf */; };
@@ -102,6 +103,7 @@
 		D9745FED262CE0AA0007E0CF /* AppDiContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDiContainer.swift; sourceTree = "<group>"; };
 		D9745FF1262CE1270007E0CF /* AppConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurations.swift; sourceTree = "<group>"; };
 		D9745FF5262CE5420007E0CF /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		D9745FFA262CE8990007E0CF /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		D982CCD0262CB2A900078B08 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		D982CCD1262CB2A900078B08 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		D982CCD2262CB2A900078B08 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -233,6 +235,14 @@
 				D9745FE1262CD7CF0007E0CF /* ApiRequestStatus.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		D9745FF9262CE8820007E0CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9745FFA262CE8990007E0CF /* UIViewController + Extension.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D982CCCF262CB27C00078B08 /* fonts */ = {
@@ -414,6 +424,7 @@
 		D98BCF95262B716A006FAC56 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D9745FF9262CE8820007E0CF /* Views */,
 				D98BCF96262B717F006FAC56 /* Double+Extension.swift */,
 			);
 			path = Extensions;
@@ -738,6 +749,7 @@
 				D98BCF56262AF706006FAC56 /* CurrencyListViewModel.swift in Sources */,
 				D98BCF45262AF670006FAC56 /* CurrencyListViewController.swift in Sources */,
 				D9AACBE7262B998D001EFE06 /* CurrencyConverterViewController.swift in Sources */,
+				D9745FFB262CE8990007E0CF /* UIViewController + Extension.swift in Sources */,
 				D9745FDB262CC8F20007E0CF /* CurrencySceneFlowCoordinator.swift in Sources */,
 				D9745FCB262CC3B30007E0CF /* CurrencyRatesUseCase.swift in Sources */,
 				D9745FB7262CB7530007E0CF /* DefaultCurrencyRepository.swift in Sources */,

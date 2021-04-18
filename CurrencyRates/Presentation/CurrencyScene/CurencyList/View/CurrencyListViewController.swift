@@ -60,10 +60,11 @@ class CurrencyListViewController: UIViewController {
       }
     }).disposed(by: disposeBag)
     viewModel.errorData.asObservable().subscribe(onNext: {
-       error in
+       [weak self ] error in
       //to do show error view
-      print(error)
-      
+      DispatchQueue.main.async {
+        self?.showAlert(message: error)
+      }
     }).disposed(by: disposeBag)
     viewModel.currentCurrencyObservedObj.asObservable().subscribe(onNext: {
        currency in
@@ -112,8 +113,8 @@ extension CurrencyListViewController : UITableViewDataSource,UITableViewDelegate
     return 100
   }
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let currency = viewModel.item(at: indexPath.row)
     // go the next view
+    viewModel.didSelectItem(at: indexPath.row)
 
   }
 }

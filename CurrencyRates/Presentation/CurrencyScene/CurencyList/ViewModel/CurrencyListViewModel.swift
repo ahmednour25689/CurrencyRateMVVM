@@ -81,7 +81,7 @@ extension DefaultCurrencyListViewModel {
     initData()
   }
   func didSelectItem(at index: Int) {
-    
+    actions?.showCurrencyConverterView(currentCurrency!, item(at: index))
   }
   func item(at index: Int) -> CurrencyListItemViewModel {
     return data[index]
