@@ -17,12 +17,12 @@ struct ApiUrlComponent {
 
 class DefaultCurrencyListViewModel {
   
-  var successData : PublishRelay<BaseResponse> = PublishRelay()
+  var successData : PublishRelay<CurrencyRatesDTO> = PublishRelay()
   var errorData : PublishRelay<String> = PublishRelay()
   var loading : PublishRelay<Bool> = PublishRelay()
     func getData(with urlComponts: ApiUrlComponent) {
       self.loading.accept(true)
-        let manger = NetworkMangerInterface<BaseResponse>.createNetworkMangerInstance(baseUrl: urlComponts.baseurl, path: urlComponts.apiPath, params: urlComponts.params)
+        let manger = NetworkMangerInterface<CurrencyRatesDTO>.createNetworkMangerInstance(baseUrl: urlComponts.baseurl, path: urlComponts.apiPath, params: urlComponts.params)
         manger.getData { [weak self] result in
           self?.loading.accept(false)
             switch result {

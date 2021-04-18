@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 var window: UIWindow?
@@ -16,6 +16,7 @@ var window: UIWindow?
     let navigationController = UINavigationController(rootViewController: CurrencyListViewController())
     window?.rootViewController = navigationController
     window?.makeKeyAndVisible()
+    IQKeyboardManager.shared.enable = true
     return true
   }
 
