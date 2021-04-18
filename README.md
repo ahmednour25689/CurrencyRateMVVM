@@ -13,8 +13,8 @@ Clean architecture with mvvm as presentation layer
 
 -- to change base currency click on change currency button
 
-##Run Project 
---clone master branch
+## Run Project 
+-- clone master branch
 
 -- go to project directory
  
