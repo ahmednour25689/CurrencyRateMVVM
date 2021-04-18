@@ -12,3 +12,11 @@ Clean architecture with mvvm as presentation layer
 -- Api using EUR as base currency 
 
 -- to change base currency click on change currency button
+
+##Run Project 
+--clone master branch
+
+-- go to project directory
+ 
+-- run pod install
+
