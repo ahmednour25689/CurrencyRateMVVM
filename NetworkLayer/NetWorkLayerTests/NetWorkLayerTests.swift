@@ -25,7 +25,7 @@ class NetworkLayerTests: XCTestCase {
         XCTAssertNotNil(networkManager, "network manager not initialized")
     }
 
-    func test_GetData_WhenInvalidUrl_RetrunsError() {
+    func test_GetData_WhenInvalidUrl_ReturnsError() {
         createInValidNetworkManagerInstance()
         let expectation = XCTestExpectation(description: "get data")
         networkManager?.getData(completion: { result in
@@ -40,7 +40,7 @@ class NetworkLayerTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
 
-    func test_GetData_WhenValidUrl_RetrunsResponse() {
+    func test_GetData_WhenValidUrl_ReturnsResponse() {
         createValidNetworkManagerInstance()
         let expectation = XCTestExpectation(description: "get data")
         networkManager?.getData(completion: { result in

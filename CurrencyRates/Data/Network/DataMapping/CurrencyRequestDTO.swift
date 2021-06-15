@@ -6,7 +6,8 @@
 //
 
 import Foundation
+
 struct CurrencyRequestDTO {
-  let apiPath: String
-  let params: [String: String]
+    let apiPath: String
+    let params: [String: String]
 }

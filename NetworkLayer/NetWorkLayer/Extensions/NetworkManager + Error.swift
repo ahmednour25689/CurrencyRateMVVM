@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 public extension NetworkManager {
     enum Error: Swift.Error {
         case unknown

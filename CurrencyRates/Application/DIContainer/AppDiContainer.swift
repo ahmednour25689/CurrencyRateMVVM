@@ -6,13 +6,14 @@
 //
 
 import Foundation
+
 final class AppDIContainer {
 
     lazy var appConfiguration = AppConfiguration()
 
     // MARK: - DIContainers of scenes
     func makeCurrencyListSceneDIContainer() -> CurrencySceneDiContainer {
-      let dependencies = CurrencySceneDiContainer.Dependencies(apiBaseUrl: appConfiguration.apiBaseURL, apiKey: appConfiguration.apiKey)
+        let dependencies = CurrencySceneDiContainer.Dependencies(apiBaseUrl: appConfiguration.apiBaseURL, apiKey: appConfiguration.apiKey)
         return CurrencySceneDiContainer(dependencies: dependencies)
     }
 }

@@ -6,7 +6,8 @@
 //
 
 import Foundation
+
 struct ErrorDTO: Codable {
-  var code: Int
-  var type: String
+    var code: Int
+    var type: String
 }

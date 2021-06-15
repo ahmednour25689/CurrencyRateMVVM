@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 public final class NetworkManager<T: Codable> {
     /// Each network request returns a Result which contains either a decoded json or an `NetworkManager.Error`.
     public typealias NetworkResult = NetworkManager.Result<T, NetworkManager.Error>
@@ -52,7 +53,7 @@ public final class NetworkManager<T: Codable> {
 
         // print request for debug purposes
 
-            print("Request url: \(url)")
+        print("Request url: \(url)")
 
 
         // create data task
@@ -67,13 +68,13 @@ public final class NetworkManager<T: Codable> {
     // MARK: - Helper
 
     private func buildTask(withURL url: URL, completion: @escaping ResponseHandler) -> URLSessionDataTask {
-        return session.dataTask(with: url) { data, response, error in
+        session.dataTask(with: url) { data, response, error in
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(.invalidServerResponse))
                 return
             }
             // check for successful status code
-            guard 200 ... 299 ~= httpResponse.statusCode else {
+            guard 200...299 ~= httpResponse.statusCode else {
                 completion(.failure(.serverError(httpResponse.statusCode)))
                 return
             }
@@ -105,6 +106,6 @@ public final class NetworkManager<T: Codable> {
             URLQueryItem(name: $0.0, value: $0.1)
         }
 
-      return components.url
+        return components.url
     }
 }

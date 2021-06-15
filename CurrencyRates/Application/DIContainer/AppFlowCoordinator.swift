@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 final class AppFlowCoordinator {
 
     var navigationController: UINavigationController
@@ -21,7 +22,7 @@ final class AppFlowCoordinator {
     func start() {
 
         let currencySceneDiContainer = appDIContainer.makeCurrencyListSceneDIContainer()
-        let flow = currencySceneDiContainer.makeCurrecncyFlowCoordinator(navigationController: navigationController)
+        let flow = currencySceneDiContainer.makeCurrencyFlowCoordinator(navigationController: navigationController)
         flow.start()
     }
 }

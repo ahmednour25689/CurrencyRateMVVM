@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 public extension NetworkManager {
     enum Result<T, U> {
         case success(T)

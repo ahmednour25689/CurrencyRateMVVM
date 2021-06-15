@@ -6,9 +6,10 @@
 //
 
 import Foundation
+
 enum ApiRequestStatus {
-  case loading
-  case finished
-  case error
-  case idle
+    case loading
+    case finished
+    case error
+    case idle
 }

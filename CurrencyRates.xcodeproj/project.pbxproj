@@ -43,6 +43,43 @@
 		D98BCF78262B09D5006FAC56 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98BCF76262B09D5006FAC56 /* CurrencyTableViewCell.xib */; };
 		D98BCF97262B717F006FAC56 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF96262B717F006FAC56 /* Double+Extension.swift */; };
 		D98BCFAA262B873D006FAC56 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCFA9262B873D006FAC56 /* ProgressView.swift */; };
+		D9A7C7A22652F35E004B10D6 /* AppConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FF1262CE1270007E0CF /* AppConfigurations.swift */; };
+		D9A7C7A32652F35E004B10D6 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF75262B09D5006FAC56 /* CurrencyTableViewCell.swift */; };
+		D9A7C7A42652F35E004B10D6 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF66262AF875006FAC56 /* Serializable.swift */; };
+		D9A7C7A52652F35E004B10D6 /* CurrencyRatesDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF61262AF845006FAC56 /* CurrencyRatesDTO+Mapping.swift */; };
+		D9A7C7A62652F35E004B10D6 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AACBF6262C5928001EFE06 /* CurrencyRate.swift */; };
+		D9A7C7A72652F35E004B10D6 /* CurrencyRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FCE262CC5E60007E0CF /* CurrencyRequestDTO.swift */; };
+		D9A7C7A82652F35E004B10D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCE9B2628EA6F006FAC56 /* AppDelegate.swift */; };
+		D9A7C7A92652F35E004B10D6 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF55262AF706006FAC56 /* CurrencyListViewModel.swift */; };
+		D9A7C7AA2652F35E004B10D6 /* CurrencyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF43262AF670006FAC56 /* CurrencyListViewController.swift */; };
+		D9A7C7AB2652F35E004B10D6 /* CurrencyConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AACBE5262B998D001EFE06 /* CurrencyConverterViewController.swift */; };
+		D9A7C7AC2652F35E004B10D6 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FFA262CE8990007E0CF /* UIViewController + Extension.swift */; };
+		D9A7C7AD2652F35E004B10D6 /* CurrencySceneFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FDA262CC8F20007E0CF /* CurrencySceneFlowCoordinator.swift */; };
+		D9A7C7AE2652F35E004B10D6 /* CurrencyRatesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FCA262CC3B30007E0CF /* CurrencyRatesUseCase.swift */; };
+		D9A7C7AF2652F35E004B10D6 /* DefaultCurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FB6262CB7530007E0CF /* DefaultCurrencyRepository.swift */; };
+		D9A7C7B02652F35E004B10D6 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FF5262CE5420007E0CF /* AppFlowCoordinator.swift */; };
+		D9A7C7B12652F35E004B10D6 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FBC262CB7C70007E0CF /* CurrencyRepository.swift */; };
+		D9A7C7B22652F35E004B10D6 /* CurrencySceneDiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FD3262CC6AF0007E0CF /* CurrencySceneDiContainer.swift */; };
+		D9A7C7B32652F35E004B10D6 /* ErrorDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AACBF2262C58E2001EFE06 /* ErrorDTO+Mapping.swift */; };
+		D9A7C7B42652F35E004B10D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF3B262AF58C006FAC56 /* Constants.swift */; };
+		D9A7C7B52652F35E004B10D6 /* ApiRequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FE1262CD7CF0007E0CF /* ApiRequestStatus.swift */; };
+		D9A7C7B62652F35E004B10D6 /* AppDiContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9745FED262CE0AA0007E0CF /* AppDiContainer.swift */; };
+		D9A7C7B72652F35E004B10D6 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCF96262B717F006FAC56 /* Double+Extension.swift */; };
+		D9A7C7B82652F35E004B10D6 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BCFA9262B873D006FAC56 /* ProgressView.swift */; };
+		D9A7C7B92652F35E004B10D6 /* CurrencyListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AACBFD262C5F9B001EFE06 /* CurrencyListItemViewModel.swift */; };
+		D9A7C7BB2652F35E004B10D6 /* Pods_CurrencyRates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D45DB24A2238C899D73E4EE /* Pods_CurrencyRates.framework */; };
+		D9A7C7BC2652F35E004B10D6 /* NetworkLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BCF5A262AF76B006FAC56 /* NetworkLayer.framework */; };
+		D9A7C7BD2652F35E004B10D6 /* CustomComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9745FA5262CB5700007E0CF /* CustomComponents.framework */; };
+		D9A7C7BF2652F35E004B10D6 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98BCF76262B09D5006FAC56 /* CurrencyTableViewCell.xib */; };
+		D9A7C7C02652F35E004B10D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98BCEA62628EA72006FAC56 /* LaunchScreen.storyboard */; };
+		D9A7C7C12652F35E004B10D6 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D982CCD2262CB2A900078B08 /* Roboto-Regular.ttf */; };
+		D9A7C7C22652F35E004B10D6 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D982CCD0262CB2A900078B08 /* Roboto-Bold.ttf */; };
+		D9A7C7C32652F35E004B10D6 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D982CCD1262CB2A900078B08 /* Roboto-Medium.ttf */; };
+		D9A7C7C42652F35E004B10D6 /* CurrencyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98BCF44262AF670006FAC56 /* CurrencyListViewController.xib */; };
+		D9A7C7C52652F35E004B10D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98BCEA42628EA72006FAC56 /* Assets.xcassets */; };
+		D9A7C7C62652F35E004B10D6 /* CurrencyConverterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9AACBE6262B998D001EFE06 /* CurrencyConverterViewController.xib */; };
+		D9A7C7C82652F35E004B10D6 /* NetworkLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D98BCF5A262AF76B006FAC56 /* NetworkLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9A7C7C92652F35E004B10D6 /* CustomComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9745FA5262CB5700007E0CF /* CustomComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D9AACBE7262B998D001EFE06 /* CurrencyConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AACBE5262B998D001EFE06 /* CurrencyConverterViewController.swift */; };
 		D9AACBE8262B998D001EFE06 /* CurrencyConverterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9AACBE6262B998D001EFE06 /* CurrencyConverterViewController.xib */; };
 		D9AACBF3262C58E2001EFE06 /* ErrorDTO+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AACBF2262C58E2001EFE06 /* ErrorDTO+Mapping.swift */; };
@@ -76,6 +113,18 @@
 			files = (
 				D98BCF5C262AF76B006FAC56 /* NetworkLayer.framework in Embed Frameworks */,
 				D9745FA7262CB5700007E0CF /* CustomComponents.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A7C7C72652F35E004B10D6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D9A7C7C82652F35E004B10D6 /* NetworkLayer.framework in Embed Frameworks */,
+				D9A7C7C92652F35E004B10D6 /* CustomComponents.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +178,8 @@
 		D98BCF76262B09D5006FAC56 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
 		D98BCF96262B717F006FAC56 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		D98BCFA9262B873D006FAC56 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		D9A7C7CF2652F35E004B10D6 /* CurrencyRates copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CurrencyRates copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9A7C7D02652F35E004B10D6 /* CurrencyRates copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CurrencyRates copy-Info.plist"; path = "/Users/ahmed_nour/Projects/CurrencyRates/CurrencyRates copy-Info.plist"; sourceTree = "<absolute>"; };
 		D9AACBE5262B998D001EFE06 /* CurrencyConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterViewController.swift; sourceTree = "<group>"; };
 		D9AACBE6262B998D001EFE06 /* CurrencyConverterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyConverterViewController.xib; sourceTree = "<group>"; };
 		D9AACBF2262C58E2001EFE06 /* ErrorDTO+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ErrorDTO+Mapping.swift"; sourceTree = "<group>"; };
@@ -160,6 +211,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				99E6130658163EF7251069F7 /* Pods_CurrencyRates_CurrencyRatesUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A7C7BA2652F35E004B10D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A7C7BB2652F35E004B10D6 /* Pods_CurrencyRates.framework in Frameworks */,
+				D9A7C7BC2652F35E004B10D6 /* NetworkLayer.framework in Frameworks */,
+				D9A7C7BD2652F35E004B10D6 /* CustomComponents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +325,7 @@
 				D98BCE992628EA6F006FAC56 /* Products */,
 				56B7AE255DD30D9CDFE2231C /* Pods */,
 				E765EE38FC2F2A53C551C92B /* Frameworks */,
+				D9A7C7D02652F35E004B10D6 /* CurrencyRates copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +335,7 @@
 				D98BCE982628EA6F006FAC56 /* CurrencyRates.app */,
 				D98BCEAE2628EA73006FAC56 /* CurrencyRatesTests.xctest */,
 				D98BCEB92628EA73006FAC56 /* CurrencyRatesUITests.xctest */,
+				D9A7C7CF2652F35E004B10D6 /* CurrencyRates copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -558,6 +621,27 @@
 			productReference = D98BCEB92628EA73006FAC56 /* CurrencyRatesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		D9A7C79F2652F35E004B10D6 /* CurrencyRates copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9A7C7CC2652F35E004B10D6 /* Build configuration list for PBXNativeTarget "CurrencyRates copy" */;
+			buildPhases = (
+				D9A7C7A02652F35E004B10D6 /* [CP] Check Pods Manifest.lock */,
+				D9A7C7A12652F35E004B10D6 /* Sources */,
+				D9A7C7BA2652F35E004B10D6 /* Frameworks */,
+				D9A7C7BE2652F35E004B10D6 /* Resources */,
+				D9A7C7C72652F35E004B10D6 /* Embed Frameworks */,
+				D9A7C7CA2652F35E004B10D6 /* [CP] Embed Pods Frameworks */,
+				D9A7C7CB2652F35E004B10D6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CurrencyRates copy";
+			productName = TemplateMVVM;
+			productReference = D9A7C7CF2652F35E004B10D6 /* CurrencyRates copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -596,6 +680,7 @@
 				D98BCE972628EA6F006FAC56 /* CurrencyRates */,
 				D98BCEAD2628EA73006FAC56 /* CurrencyRatesTests */,
 				D98BCEB82628EA73006FAC56 /* CurrencyRatesUITests */,
+				D9A7C79F2652F35E004B10D6 /* CurrencyRates copy */,
 			);
 		};
 /* End PBXProject section */
@@ -627,6 +712,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A7C7BE2652F35E004B10D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A7C7BF2652F35E004B10D6 /* CurrencyTableViewCell.xib in Resources */,
+				D9A7C7C02652F35E004B10D6 /* LaunchScreen.storyboard in Resources */,
+				D9A7C7C12652F35E004B10D6 /* Roboto-Regular.ttf in Resources */,
+				D9A7C7C22652F35E004B10D6 /* Roboto-Bold.ttf in Resources */,
+				D9A7C7C32652F35E004B10D6 /* Roboto-Medium.ttf in Resources */,
+				D9A7C7C42652F35E004B10D6 /* CurrencyListViewController.xib in Resources */,
+				D9A7C7C52652F35E004B10D6 /* Assets.xcassets in Resources */,
+				D9A7C7C62652F35E004B10D6 /* CurrencyConverterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,6 +831,63 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+		D9A7C7A02652F35E004B10D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CurrencyRates-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9A7C7CA2652F35E004B10D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyRates/Pods-CurrencyRates-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9A7C7CB2652F35E004B10D6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		EB07F9AE51F0D12DC2B31619 /* [CP] Embed Pods Frameworks */ = {
@@ -797,6 +954,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98BCEBE2628EA73006FAC56 /* TemplateMVVMUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9A7C7A12652F35E004B10D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9A7C7A22652F35E004B10D6 /* AppConfigurations.swift in Sources */,
+				D9A7C7A32652F35E004B10D6 /* CurrencyTableViewCell.swift in Sources */,
+				D9A7C7A42652F35E004B10D6 /* Serializable.swift in Sources */,
+				D9A7C7A52652F35E004B10D6 /* CurrencyRatesDTO+Mapping.swift in Sources */,
+				D9A7C7A62652F35E004B10D6 /* CurrencyRate.swift in Sources */,
+				D9A7C7A72652F35E004B10D6 /* CurrencyRequestDTO.swift in Sources */,
+				D9A7C7A82652F35E004B10D6 /* AppDelegate.swift in Sources */,
+				D9A7C7A92652F35E004B10D6 /* CurrencyListViewModel.swift in Sources */,
+				D9A7C7AA2652F35E004B10D6 /* CurrencyListViewController.swift in Sources */,
+				D9A7C7AB2652F35E004B10D6 /* CurrencyConverterViewController.swift in Sources */,
+				D9A7C7AC2652F35E004B10D6 /* UIViewController + Extension.swift in Sources */,
+				D9A7C7AD2652F35E004B10D6 /* CurrencySceneFlowCoordinator.swift in Sources */,
+				D9A7C7AE2652F35E004B10D6 /* CurrencyRatesUseCase.swift in Sources */,
+				D9A7C7AF2652F35E004B10D6 /* DefaultCurrencyRepository.swift in Sources */,
+				D9A7C7B02652F35E004B10D6 /* AppFlowCoordinator.swift in Sources */,
+				D9A7C7B12652F35E004B10D6 /* CurrencyRepository.swift in Sources */,
+				D9A7C7B22652F35E004B10D6 /* CurrencySceneDiContainer.swift in Sources */,
+				D9A7C7B32652F35E004B10D6 /* ErrorDTO+Mapping.swift in Sources */,
+				D9A7C7B42652F35E004B10D6 /* Constants.swift in Sources */,
+				D9A7C7B52652F35E004B10D6 /* ApiRequestStatus.swift in Sources */,
+				D9A7C7B62652F35E004B10D6 /* AppDiContainer.swift in Sources */,
+				D9A7C7B72652F35E004B10D6 /* Double+Extension.swift in Sources */,
+				D9A7C7B82652F35E004B10D6 /* ProgressView.swift in Sources */,
+				D9A7C7B92652F35E004B10D6 /* CurrencyListItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,6 +1253,44 @@
 			};
 			name = Release;
 		};
+		D9A7C7CD2652F35E004B10D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 020990BED863D02A7FEDA89B /* Pods-CurrencyRates.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CurrencyRates copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednour.CurrencyRatess;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9A7C7CE2652F35E004B10D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24C990335D45B4C1002F07C5 /* Pods-CurrencyRates.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CurrencyRates copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ahmednour.CurrencyRatess;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1100,6 +1326,15 @@
 			buildConfigurations = (
 				D98BCEC92628EA73006FAC56 /* Debug */,
 				D98BCECA2628EA73006FAC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9A7C7CC2652F35E004B10D6 /* Build configuration list for PBXNativeTarget "CurrencyRates copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9A7C7CD2652F35E004B10D6 /* Debug */,
+				D9A7C7CE2652F35E004B10D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

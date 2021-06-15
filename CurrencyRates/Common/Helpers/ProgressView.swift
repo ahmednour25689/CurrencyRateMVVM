@@ -7,13 +7,15 @@
 
 import Foundation
 import SVProgressHUD
-class  ProgressViewHelper {
+
+class ProgressViewHelper {
     class func showProgressBarWithDimView() {
         SVProgressHUD().defaultMaskType = .black
         SVProgressHUD().defaultAnimationType = .flat
         SVProgressHUD.show()
     }
-    class func dissmissProgressBar() {
+
+    class func dismissProgressBar() {
         SVProgressHUD.dismiss()
     }
 }

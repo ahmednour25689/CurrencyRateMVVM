@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class Constants {
-  static let latestCurrencyRatesApiPath = "/api/latest"
+    static let latestCurrencyRatesApiPath = "/api/latest"
 }
